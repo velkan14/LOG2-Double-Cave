@@ -13,7 +13,7 @@ isDoneRed = false;
 
 function showDemoDialogue(sender)
 	if ( isDoneRed and isDoneBlue ) then
-		-- questionaire
+		findEntity("script_dialogue_04").script:showDemoDialogue();
 		return;
 	end
 	if( isDoneBlue or isDoneRed ) then

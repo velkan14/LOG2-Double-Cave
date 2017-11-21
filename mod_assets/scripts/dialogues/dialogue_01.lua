@@ -227,11 +227,11 @@ function _showSevenPage()
 	
 	local page = {
 		speakerName = "Red Wizard",
-		speakerMessage = nextResponse .. "All you need to do is test our dungeon and tells us which is better! Do you want to try mine first or my brothers?",
+		speakerMessage = nextResponse .. "All you need to do is test our dungeon and tells us which is better! Do you want to try my Red Dungeon first or my brother's Blue Dungeon?",
 		onFinish = self.go.id..".script._sevenPageCallback",
 		responses = {
-			{ text = "I'll go with yours!", nextResponse = "" },
-			{ text = "Your brother's first.", nextResponse = "" }
+			{ text = "I'll go with the Red Dungeon!", nextResponse = "" },
+			{ text = "The Blue Dungeon first.", nextResponse = "" }
 		}
 	}
 
@@ -240,15 +240,19 @@ end
 
 function _sevenPageCallback(response)	
 	if ( response == 1 ) then
-		nextResponse = "Fine, just enter the teleporter and try to stay alive... ... without your weapons!"
+		nextResponse = "Fine, just enter the teleporter to the Red Dungeon and try to stay alive... ... without your weapons!"
 		_faceWizard("red_wizard_1")
-		spawn("teleporter", 1, 14, 14, 0, 0, "teleporter_red").teleporter:setTeleportTarget(3, 20, 11, 0)
+		local teleprt = spawn("teleporter", 1, 14, 14, 0, 0, "teleporter_red")
+		teleprt.teleporter:setTeleportTarget(3, 20, 11, 0)
+		teleprt.teleporter:setSpin("south")
 		nextSpeaker = "Red Wizard"
 	end	
 	if ( response == 2 ) then
-		nextResponse ="I've created a teleporter that will take you to my dungeon. But first I'll have to take your weapons away. Have fun!";	
+		nextResponse ="I've created a teleporter that will take you to my Blue Dungeon. But first I'll have to take your weapons away. Have fun!";	
 		_faceWizard("wizard_1")
-		spawn("teleporter", 1, 14, 14, 0, 0, "teleporter_blue").teleporter:setTeleportTarget(2, 20, 11, 0)
+		local teleprt = spawn("teleporter", 1, 14, 14, 0, 0, "teleporter_blue")
+		teleprt.teleporter:setTeleportTarget(2, 20, 11, 0)
+		teleprt.teleporter:setSpin("south")
 		nextSpeaker = "Wizard"
 	end
 

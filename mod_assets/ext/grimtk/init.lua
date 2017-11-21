@@ -10,7 +10,7 @@ defineObject{
 					local gtk = spawn("script_entity", 1, 1, 1, 1, 1, "GTK");
 					gtk.script:loadFile("mod_assets/ext/grimtk/scripts/hook.lua");
 					gtk:createComponent("Script", "Constants"):loadFile("mod_assets/ext/grimtk/scripts/gtk/constants.lua");
-					gtk:createComponent("Script", "Input"):loadFile("mod_assets/ext/grimtk/scripts/gtk/input.lua");					
+					gtk:createComponent("Script", "Input"):loadFile("mod_assets/ext/grimtk/scripts/gtk/input.lua");
 					gtk:createComponent("Script", "Core"):loadFile("mod_assets/ext/grimtk/scripts/gtk/core.lua");
 					gtk:createComponent("Script", "Widgets"):loadFile("mod_assets/ext/grimtk/scripts/gtk/widgets.lua");
 
@@ -20,12 +20,13 @@ defineObject{
 
 					delayedCall("GTK", 0.01, "emitGtkDidLoad");
 				end
-				
+
 				if ( findEntity("GTKGui") == nil ) then
 					local gtkgui = spawn("script_entity", 1, 1, 1, 1, 1, "GTKGui");
 					gtkgui:createComponent("Script", "Basic"):loadFile("mod_assets/ext/grimtk/scripts/gtkgui/basic.lua");
 					gtkgui:createComponent("Script", "Dialogue"):loadFile("mod_assets/ext/grimtk/scripts/gtkgui/dialogue.lua");
-					gtkgui:createComponent("Script", "Cinematic"):loadFile("mod_assets/ext/grimtk/scripts/gtkgui/cinematic.lua");					
+					gtkgui:createComponent("Script", "Cinematic"):loadFile("mod_assets/ext/grimtk/scripts/gtkgui/cinematic.lua");
+					gtkgui:createComponent("Script", "Form"):loadFile("mod_assets/ext/grimtk/scripts/gtkgui/form_scale.lua");
 				end
 			end
 		}
@@ -48,14 +49,14 @@ if fw_hook == nil then
 			{
 				class = "Party",
 				onDrawGui = function(party, g)
-					
+
 				end,
 				onRest = function(party)
 					if ( findEntity("GTK") ) then
 						if ( GTK.Core.GUI:isPartyLocked() ) then
 							return false;
 						end
-					end			
+					end
 				end,
 				onWakeUp = function(party)
 					if ( findEntity("GTK") ) then

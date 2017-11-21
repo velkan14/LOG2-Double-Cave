@@ -1,6 +1,6 @@
 
 ------------------------------------------------------------------------
--- Dialogue Blue Dungeon completed
+-- Dialogue Red Dungeon completed
 --
 -- An example of using the dialogue system manually to make more custom
 -- conversations.
@@ -28,12 +28,12 @@ end
 
 function _showIntroPage()
 		
-	_faceWizard("wizard_1")
-	findEntity("wizard_1").monster:turnLeft();
+	_faceWizard("red_wizard_1")
+	findEntity("red_wizard_1").monster:turnRight();
 	
 	local page = {
-		speakerName = "Blue Wizard",
-		speakerMessage = "Hi! I see you finished my Blue Dungeon. Amazing!",
+		speakerName = "Red Wizard",
+		speakerMessage = "You're alive! That's some good news.",
 		onFinish = self.go.id..".script._introCallback",
 		responses = {
 			{ text = "It was easy!" },
@@ -52,11 +52,11 @@ function _introCallback(response)
 	end
 	
 	if ( response == 2 ) then
-		nextResponse = "If you like chalenges, you'll like my dungeon! "
+		nextResponse = "If you like chalenges, you'll like mine dungeon! "
 	end	
 	
 	if ( response == 3 ) then
-		nextResponse = "That's the job of an warrior, right!?"
+		nextResponse = "Since you are alive... "
 	end 
 	_showSecondPage()
 end
@@ -64,17 +64,17 @@ end
 
 function _showSecondPage()
 
-	_faceWizard("red_wizard_1")
-	findEntity("red_wizard_1").monster:turnRight();
+	_faceWizard("wizard_1")
+	findEntity("wizard_1").monster:turnLeft();
 	
 	local page = {
-		speakerName = "Red Wizard",
-		speakerMessage = nextResponse .. "Now it's time to try my Red Dungeon. Are you ready?",
+		speakerName = "Blue Wizard",
+		speakerMessage = nextResponse .. "Now it's time to try my Blue Dungeon. Are you ready?",
 		onFinish = self.go.id..".script._secondCallback",
 		responses = {
 			{ text = "Always ready for adventure."},
 			{ text = "I'm tired."},			
-			{ text = "It's my job, right?"}
+			{ text = "I'm still alive..."}
 		}
 	}
 
@@ -99,10 +99,10 @@ end
 
 function _showThirdPage()
 
-	_faceWizard("red_wizard_1")
+	_faceWizard("wizard_1")
 	
 	local page = {
-		speakerName = "Red Wizard",
+		speakerName = "Blue Wizard",
 		speakerMessage = nextResponse .. "Let me just take away all your stuff, and you can enter the portal.",
 		onFinish = self.go.id..".script._thirdCallback",
 		responses = {
@@ -122,10 +122,9 @@ function _thirdCallback(response)
 	party.party:heal()
 	isDone = true;
 	
-	local teleprt = spawn("teleporter", 1, 14, 14, 0, 0, "teleporter_red")
-	teleprt.teleporter:setTeleportTarget(3, 20, 11, 0)
+	local teleprt = spawn("teleporter", 1, 14, 14, 0, 0, "teleporter_blue")
+	teleprt.teleporter:setTeleportTarget(2, 20, 11, 0)
 	teleprt.teleporter:setSpin("south")
-	
 	findEntity("wizard_1").monster:turnRight();
 	findEntity("red_wizard_1").monster:turnLeft();
 end

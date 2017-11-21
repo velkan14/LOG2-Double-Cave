@@ -56,7 +56,7 @@ spawn("torch_holder",4,11,1,0,"torch_holder_5")
 torch_holder_5.controller:setHasTorch(true)
 spawn("torch_holder",4,3,0,0,"torch_holder_7")
 torch_holder_7.controller:setHasTorch(true)
-spawn("starting_location",17,14,3,0,"starting_location")
+spawn("starting_location",19,14,3,0,"starting_location")
 spawn("torch_holder",5,8,1,0,"torch_holder_6")
 torch_holder_6.controller:setHasTorch(true)
 spawn("torch_holder",5,6,0,0,"torch_holder_8")
@@ -102,7 +102,7 @@ dungeon_pressure_plate_2.floortrigger:addConnector("onActivate", "script_entity_
 spawn("script_entity",5,10,2,0,"script_entity_2")
 script_entity_2.script:setSource("function clear()\
 \9for i=1,4 do\
-\9\9print(party.party:getChampionByOrdinal(i))\
+\9\9print(party.party:getChampionByOrdinal(i):getName())\
 \9\9for j=1,32 do\
 \9\9\9party.party:getChampion(i):removeItemFromSlot(j);\
 \9\9end\
@@ -313,7 +313,7 @@ floor_trigger_10.floortrigger:setTriggeredByMonster(true)
 floor_trigger_10.floortrigger:setTriggeredByItem(true)
 floor_trigger_10.floortrigger:setTriggeredByDigging(false)
 floor_trigger_10.floortrigger:setDisableSelf(false)
-floor_trigger_10.floortrigger:addConnector("onActivate", "script_entity_3", "move")
+floor_trigger_10.floortrigger:addConnector("onActivate", "script_dialogue_04", "showDemoDialogue")
 spawn("script_entity",18,17,0,0,"script_entity_3")
 script_entity_3.script:setSource("function move()\
 \9\
@@ -353,10 +353,18 @@ floor_trigger_12.floortrigger:addConnector("onActivate", "script_dialogue", "set
 spawn("script_entity",15,15,3,0,"script_dialogue")
 script_dialogue.script:loadFile("mod_assets/scripts/dialogues/dialogue_wizards.lua")
 spawn("castle_ceiling_lantern",4,20,1,0,"castle_ceiling_lantern_1")
-spawn("script_entity",0,10,2,0,"script_entity_6")
-script_entity_6.script:setSource("function refresh()\
-\9\
-end")
+spawn("script_entity",1,0,2,0,"script_entity_6")
+script_entity_6.script:loadFile("mod_assets/scripts/refresh.lua")
+spawn("timer",1,1,1,0,"timer_1")
+timer_1.timer:setTimerInterval(1)
+timer_1.timer:setDisableSelf(false)
+timer_1.timer:setTriggerOnStart(true)
+timer_1.timer:setCurrentLevelOnly(false)
+timer_1.timer:addConnector("onActivate", "script_entity_6", "refresh")
+spawn("script_entity",15,12,3,0,"script_dialogue_03")
+script_dialogue_03.script:loadFile("mod_assets/scripts/dialogues/dialogue_03.lua")
+spawn("script_entity",16,12,2,0,"script_dialogue_04")
+script_dialogue_04.script:loadFile("mod_assets/scripts/dialogues/dialogue_04.lua")
 
 --- level 2 ---
 
@@ -550,6 +558,7 @@ dungeon_door_portcullis_4.door:setPullChain(true)
 spawn("dungeon_door_portcullis",21,15,0,0,"dungeon_door_portcullis_5")
 dungeon_door_portcullis_5.door:setPullChain(true)
 spawn("dungeon_door_portcullis",14,17,1,0,"dungeon_door_portcullis_9")
+dungeon_door_portcullis_9.door:setDoorState("open")
 spawn("dungeon_door_iron",11,20,3,0,"dungeon_door_iron_5")
 spawn("ceiling_witch_lantern",17,17,0,0,"ceiling_witch_lantern_8")
 spawn("ceiling_witch_lantern",19,17,3,0,"ceiling_witch_lantern_9")
