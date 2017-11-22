@@ -1,24 +1,24 @@
 
 ---------------------------------------------------------------
--- NPC Dialogue System
+-- NPC Form System
 ---------------------------------------------------------------
 
-GTK.Core.GUI:addImage({ name="gtk-dialogue-top", path="mod_assets/ext/grimtk/textures/dialogue_top.tga", origin={0, 0}, size={836, 397} });
-GTK.Core.GUI:addImage({ name="gtk-dialogue-bottom", path="mod_assets/ext/grimtk/textures/dialogue_bottom.tga", origin={0, 0}, size={836, 302} });
-GTK.Core.GUI:addImage({ name="gtk-dialogue-bottom-speaker-box", path="mod_assets/ext/grimtk/textures/dialogue_bottom_speaker_box.tga", origin={0, 0}, size={770, 92} });
+GTK.Core.GUI:addImage({ name="gtk-form-top", path="mod_assets/ext/grimtk/textures/dialogue_top.tga", origin={0, 0}, size={836, 397} });
+GTK.Core.GUI:addImage({ name="gtk-form-bottom", path="mod_assets/ext/grimtk/textures/dialogue_bottom.tga", origin={0, 0}, size={836, 302} });
+GTK.Core.GUI:addImage({ name="gtk-form-bottom-speaker-box", path="mod_assets/ext/grimtk/textures/dialogue_bottom_speaker_box.tga", origin={0, 0}, size={770, 92} });
 
-dialogueTopFormName = "gtk-dialogue-top";
-dialogueBottomFormName = "gtk-dialogue-bottom";
-currentDialogue = nil;
+formTopFormName = "gtk-form-top";
+formBottomFormName = "gtk-form-bottom";
+currentForm = nil;
 currentPage = nil;
 isShowing = false;
 didShowPage = false;
 
-dialogueTopForm = {
-	name = dialogueTopFormName,
+formTopForm = {
+	name = formTopFormName,
 	type = "GWindow",
 	size = {836, 397},
-	bgImage = "gtk-dialogue-top",
+	bgImage = "gtk-form-top",
 	bgDrawMode = GTK.Constants.ImageDrawMode.Stretched,
 	gravity = GTK.Constants.Gravity.North,
 	offset = {0, 10},
@@ -34,7 +34,7 @@ dialogueTopForm = {
 		{
 			name = "mainImageView",
 			type = "GImageView",
-			image = "gtk-dialogue-top",
+			image = "gtk-form-top",
 			drawMode = GTK.Constants.ImageDrawMode.ShrinkToBox,
 			imageGravity = GTK.Constants.Gravity.Middle,
 			size = {380, 340},
@@ -53,10 +53,10 @@ dialogueTopForm = {
 	}
 }
 
-dialogueBottomForm = {
-	name = dialogueBottomFormName,
+formBottomForm = {
+	name = formBottomFormName,
 	type = "GWindow",
-	bgImage = "gtk-dialogue-bottom",
+	bgImage = "gtk-form-bottom",
 	size = {836, 302},
 	gravity = GTK.Constants.Gravity.South,
 	offset = {0, -10},
@@ -75,7 +75,7 @@ dialogueBottomForm = {
 			type = "GWidget",
 			position = {0, 0},
 			size = {770, 92},
-			bgImage = "gtk-dialogue-bottom-speaker-box",
+			bgImage = "gtk-form-bottom-speaker-box",
 			minSize = {770, 92},
 			maxSize = {770, 92},
 			layout = {
@@ -197,21 +197,21 @@ responseForm = {
 }
 
 
-function createDialogueForms()
-	if ( GTK.Core.GUI:getWindow(dialogueTopFormName) == nil ) then
-		GTK.Core.GUI:createWindow(dialogueTopForm);
+function createFormForms()
+	if ( GTK.Core.GUI:getWindow(formTopFormName) == nil ) then
+		GTK.Core.GUI:createWindow(formTopForm);
 	end
 
-	if ( GTK.Core.GUI:getWindow(dialogueBottomFormName) == nil ) then
-		GTK.Core.GUI:createWindow(dialogueBottomForm);
+	if ( GTK.Core.GUI:getWindow(formBottomFormName) == nil ) then
+		GTK.Core.GUI:createWindow(formBottomForm);
 	end
 end
 
 
-function dialogueResponseCallback(sender, mouseState)
+function formResponseCallback(sender, mouseState)
 	if ( currentPage == nil ) then
 		Console.warn("[GTK] Dialog response called but no current page.");
-		hideDialogue();
+		hideForm();
 		return;
 	end
 
@@ -226,30 +226,30 @@ function dialogueResponseCallback(sender, mouseState)
 		onFinish(sender.userdata.index);
 	end
 
-	if ( (nextPage == nil) and currentDialogue and response.nextPage ) then
+	if ( (nextPage == nil) and currentForm and response.nextPage ) then
 		nextPage = response.nextPage;
 	end
 
 	if ( nextPage and (didShowPage == false) ) then
-		showDialoguePage(nextPage);
+		showFormPage(nextPage);
 	else
 		if ( didShowPage == false ) then
-			hideDialogue();
+			hideForm();
 		end
 	end
 end
 
 
-function showDialoguePage(page)
+function showFormPage(page)
 	if type(page) == "string" then
 		local isDone = false
 
-		if (currentDialogue == nil) or (currentDialogue.pages == nil) then
-			Console.warn("[GTK] Can only showDialoguePage with a string/name if a dialogue is currently open.")
+		if (currentForm == nil) or (currentForm.pages == nil) then
+			Console.warn("[GTK] Can only showFormPage with a string/name if a form is currently open.")
 			return
 		end
 
-		for _,p in ipairs(currentDialogue.pages) do
+		for _,p in ipairs(currentForm.pages) do
 			if (isDone == false) and (p.id == page) then
 				page = p;
 				isDone = true;
@@ -257,18 +257,18 @@ function showDialoguePage(page)
 		end
 
 		if type(page) ~= "table" then
-			Console.warn("[GTK] showDialoguePage: Page not found in current dialogue with name: " .. page)
+			Console.warn("[GTK] showFormPage: Page not found in current form with name: " .. page)
 			return
 		end
 	end
 
-	createDialogueForms();
+	createFormForms();
 
-	local topWindow = GTK.Core.GUI:getWindow(dialogueTopFormName);
-	local bottomWindow = GTK.Core.GUI:getWindow(dialogueBottomFormName);
+	local topWindow = GTK.Core.GUI:getWindow(formTopFormName);
+	local bottomWindow = GTK.Core.GUI:getWindow(formBottomFormName);
 
 	if ( topWindow == nil or bottomWindow == nil ) then
-		Console.warn("[GTK-GUI] Failed to create dialogue windows.");
+		Console.warn("[GTK-GUI] Failed to create form windows.");
 		return
 	end
 
@@ -314,7 +314,7 @@ function showDialoguePage(page)
 	end
 
 	if ( page.onFinish and type(page.onFinish) == "function" ) then
-		Console.warn("[GTK] onFinish callbacks on NPC dialogues must now be connector strings like entity.script.function");
+		Console.warn("[GTK] onFinish callbacks on NPC forms must now be connector strings like entity.script.function");
 		page.onFinish = nil;
 	end
 
@@ -345,7 +345,7 @@ function showDialoguePage(page)
 				responseButton.data.keyboardShortcut = tostring(i);
 				responseButton.userdata.index = i;
 				responseButton.label.data.text = "\n -" .. i .. "- ";
-				responseButton:addConnectorWithStr("onPressed", "GTKGui.Form.dialogueResponseCallback");
+				responseButton:addConnectorWithStr("onPressed", "GTKGui.Form.formResponseCallback");
 				responseContainer:addChild(responseButton);
 			end
 		end
@@ -388,42 +388,42 @@ function showDialoguePage(page)
 end
 
 
-function startDialogue(dialogue)
-	if ( dialogue.pages == nil or #dialogue.pages == 0 ) then
-		Console.warn("[GTK] Invalid dialogue provided.");
+function startForm(form)
+	if ( form.pages == nil or #form.pages == 0 ) then
+		Console.warn("[GTK] Invalid form provided.");
 	end
 
-	if ( dialogue.lockParty == true ) then
+	if ( form.lockParty == true ) then
 		GTK.Core.GUI:lockParty();
 	end
 
 	local didLoadPage = false;
-	currentDialogue = dialogue;
+	currentForm = form;
 
-	if ( dialogue.startPage ~= nil ) then
-		for _,page in ipairs(dialogue.pages) do
-			if ( page.id == dialogue.startPage ) then
-				showDialoguePage(page);
+	if ( form.startPage ~= nil ) then
+		for _,page in ipairs(form.pages) do
+			if ( page.id == form.startPage ) then
+				showFormPage(page);
 				didLoadPage = true;
 			end
 		end
 	end
 
 	if ( didLoadPage == false ) then
-		showDialoguePage(dialogue.pages[1]);
+		showFormPage(form.pages[1]);
 	end
 end
 
 
-function hideDialogue()
-	local topWindow = GTK.Core.GUI:getWindow(dialogueTopFormName);
-	local bottomWindow = GTK.Core.GUI:getWindow(dialogueBottomFormName);
+function hideForm()
+	local topWindow = GTK.Core.GUI:getWindow(formTopFormName);
+	local bottomWindow = GTK.Core.GUI:getWindow(formBottomFormName);
 
 	if ( topWindow == nil or bottomWindow == nil ) then
 		return
 	end
 
-	if ( currentDialogue and currentDialogue.lockParty == true ) then
+	if ( currentForm and currentForm.lockParty == true ) then
 		GTK.Core.GUI:unlockParty();
 	end
 
@@ -433,7 +433,7 @@ function hideDialogue()
 	topWindow:setVisible(false);
 	bottomWindow:setVisible(false);
 
-	currentDialogue = nil;
+	currentForm = nil;
 	currentPage = nil;
 	isShowing = false;
 end

@@ -3,11 +3,12 @@
 
 isDone = false;
 
+
+
 function start()
 	if(isDone) then
 		return;
 	end
-	
 end
 
 function refresh()

@@ -20,12 +20,12 @@ newMap{
 loadLayer("tiles", {
 	5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
 	5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
-	5,5,5,5,5,5,5,5,5,5,5,5,5,3,3,4,4,5,5,5,3,3,5,5,5,5,3,3,3,5,5,5,
-	5,5,5,5,3,3,3,3,3,3,3,3,3,3,5,4,4,4,3,3,3,3,3,3,3,3,3,5,3,5,5,5,
-	5,5,3,3,3,5,5,5,5,5,5,5,5,5,5,4,4,5,5,5,3,3,5,5,5,5,5,3,3,5,5,5,
+	5,5,5,5,5,5,5,5,5,5,5,5,5,3,3,4,4,5,5,5,4,4,5,5,5,5,3,3,3,3,3,5,
+	5,5,5,5,3,3,3,3,3,3,3,3,3,3,5,4,4,4,4,4,4,4,3,3,3,3,3,5,5,5,3,5,
+	5,5,3,3,3,5,5,5,5,5,5,5,5,5,5,4,4,5,5,5,4,4,5,5,5,5,5,3,3,3,3,5,
 	5,5,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,3,5,5,5,5,
 	5,5,3,3,3,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,3,5,5,5,5,
-	5,5,5,5,5,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,4,4,5,5,5,
+	5,5,5,5,5,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,3,5,3,5,5,4,4,4,5,5,5,
 	5,5,5,3,3,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,3,3,3,3,3,3,4,4,4,5,5,5,
 	5,5,5,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,3,5,5,5,5,5,4,4,4,5,5,5,
 	5,5,3,3,3,5,5,5,5,5,5,5,2,2,2,2,2,2,2,5,3,5,2,2,5,5,5,5,5,5,5,5,
@@ -56,7 +56,7 @@ spawn("torch_holder",4,11,1,0,"torch_holder_5")
 torch_holder_5.controller:setHasTorch(true)
 spawn("torch_holder",4,3,0,0,"torch_holder_7")
 torch_holder_7.controller:setHasTorch(true)
-spawn("starting_location",19,14,3,0,"starting_location")
+spawn("starting_location",26,2,1,0,"starting_location")
 spawn("torch_holder",5,8,1,0,"torch_holder_6")
 torch_holder_6.controller:setHasTorch(true)
 spawn("torch_holder",5,6,0,0,"torch_holder_8")
@@ -72,9 +72,6 @@ spawn("dungeon_alcove",20,4,2,0,"dungeon_alcove_4")
 spawn("brass_key",20,4,2,0,"brass_key_1")
 dungeon_alcove_4.surface:addItem(brass_key_1.item)
 spawn("dungeon_door_iron",22,3,3,0,"dungeon_door_iron_4")
-spawn("lock",21,4,1,0,"lock_2")
-lock_2.lock:setOpenedBy("brass_key")
-lock_2.lock:addConnector("onActivate", "dungeon_door_iron_4", "open")
 spawn("turtle",27,8,1,0,"turtle_1")
 turtle_1.monster:setAIState("guard")
 turtle_1.monster:addConnector("onDie", "dungeon_door_portcullis_6", "open")
@@ -92,13 +89,6 @@ spawn("torch_holder",21,4,2,0,"torch_holder_13")
 torch_holder_13.controller:setHasTorch(true)
 spawn("leather_brigandine",15,4,3,0,"leather_brigandine_1")
 spawn("leather_pants",16,4,1,0,"leather_pants_1")
-spawn("dungeon_pressure_plate",3,10,3,0,"dungeon_pressure_plate_2")
-dungeon_pressure_plate_2.floortrigger:setTriggeredByParty(true)
-dungeon_pressure_plate_2.floortrigger:setTriggeredByMonster(true)
-dungeon_pressure_plate_2.floortrigger:setTriggeredByItem(true)
-dungeon_pressure_plate_2.floortrigger:setTriggeredByDigging(false)
-dungeon_pressure_plate_2.floortrigger:setDisableSelf(false)
-dungeon_pressure_plate_2.floortrigger:addConnector("onActivate", "script_entity_2", "clear")
 spawn("script_entity",5,10,2,0,"script_entity_2")
 script_entity_2.script:setSource("function clear()\
 \9for i=1,4 do\
@@ -133,6 +123,7 @@ floor_trigger_1.floortrigger:setTriggeredByItem(false)
 floor_trigger_1.floortrigger:setTriggeredByDigging(false)
 floor_trigger_1.floortrigger:setDisableSelf(true)
 floor_trigger_1.floortrigger:addConnector("onActivate", "dungeon_door_portcullis_7", "close")
+floor_trigger_1.floortrigger:addConnector("onActivate", "script_messages", "message11")
 spawn("castle_pillar_light",18,16,0,0,"castle_pillar_light_1")
 spawn("castle_pillar_light",18,13,3,0,"castle_pillar_light_2")
 spawn("wizard",16,15,1,0,"wizard_1")
@@ -141,39 +132,8 @@ spawn("red_wizard",16,13,1,0,"red_wizard_1")
 red_wizard_1.brain:disable()
 spawn("castle_ceiling_light",17,14,2,0,"castle_ceiling_light_6")
 spawn("castle_ceiling_light",21,13,2,0,"castle_ceiling_light_8")
-spawn("script_entity",10,7,0,0,"script_messages")
-script_messages.script:setSource("function message1()\
-\9GTKGui.Basic.showInfoMessage(\"Welcome to the Legend of Grimrock 2.\\n Press W,S,A,D to walk.\");\
-end\
-\
-function message2()\
-\9GTKGui.Basic.showInfoMessage(\"If you want to get dizzy, rotate to the left using 'Q' or to the right using 'E'.\", 5);\
-end\
-\
-function message3()\
-\9GTKGui.Basic.showInfoMessage(\"Use the mouse's LEFT CLICK to interact with the environment.\", 5);\
-end\
-\
-function message4()\
-\9GTKGui.Basic.showInfoMessage(\"Press '1' to open your inventory.\", 5);\
-end\
-\
-function message5()\
-\9GTKGui.Basic.showInfoMessage(\"There are several ways to open a door.\\n This one seems to need a key.\", 5);\
-end\
-\
-function message6()\
-\9GTKGui.Basic.showInfoMessage(\"Try to find a button to open this one.\", 5);\
-end\
-\
-function message7()\
-\9GTKGui.Basic.showInfoMessage(\"Just pull the chain...\", 5);\
-end\
-\
-\
-function message8()\
-\9GTKGui.Basic.showInfoMessage(\"To attack use the RIGHT CLICK on the weapon. \\n Don't forget to wield the weapon first.\", 5);\
-end")
+spawn("script_entity",0,2,0,0,"script_messages")
+script_messages.script:loadFile("mod_assets/scripts/messages.lua")
 spawn("grimtk",0,0,2,0,"grimtk_1")
 grimtk_1.script:setSource("")
 spawn("floor_trigger",3,8,3,0,"floor_trigger_2")
@@ -225,7 +185,7 @@ dungeon_pressure_plate_3.floortrigger:addConnector("onActivate", "script_entity_
 spawn("dungeon_door_wooden",18,3,3,0,"dungeon_door_wooden_1")
 spawn("script_entity",17,2,2,0,"script_entity_1")
 script_entity_1.script:setSource("function check()\
-\9local ch = party.party:getChampion(1);\
+\9local ch = party.party:getChampionByOrdinal(1);\
 \9local head = ch:getItem(ItemSlot.Head);\
 \9local chest = ch:getItem(ItemSlot.Chest);\
 \9local legs = ch:getItem(ItemSlot.Legs);\
@@ -299,30 +259,14 @@ wall_button_2.button:setDisableSelf(false)
 wall_button_2.button:addConnector("onActivate", "dungeon_door_iron_2", "toggle")
 spawn("floor_trigger",27,7,1,0,"floor_trigger_9")
 floor_trigger_9.floortrigger:setTriggeredByParty(true)
-floor_trigger_9.floortrigger:setTriggeredByMonster(true)
-floor_trigger_9.floortrigger:setTriggeredByItem(true)
+floor_trigger_9.floortrigger:setTriggeredByMonster(false)
+floor_trigger_9.floortrigger:setTriggeredByItem(false)
 floor_trigger_9.floortrigger:setTriggeredByDigging(false)
 floor_trigger_9.floortrigger:setDisableSelf(true)
 floor_trigger_9.floortrigger:addConnector("onActivate", "dungeon_door_wooden_2", "close")
 floor_trigger_9.floortrigger:addConnector("onActivate", "script_messages", "message8")
 spawn("dungeon_door_wooden",27,6,2,0,"dungeon_door_wooden_2")
 dungeon_door_wooden_2.door:setDoorState("open")
-spawn("floor_trigger",18,14,2,0,"floor_trigger_10")
-floor_trigger_10.floortrigger:setTriggeredByParty(true)
-floor_trigger_10.floortrigger:setTriggeredByMonster(true)
-floor_trigger_10.floortrigger:setTriggeredByItem(true)
-floor_trigger_10.floortrigger:setTriggeredByDigging(false)
-floor_trigger_10.floortrigger:setDisableSelf(false)
-floor_trigger_10.floortrigger:addConnector("onActivate", "script_dialogue_04", "showDemoDialogue")
-spawn("script_entity",18,17,0,0,"script_entity_3")
-script_entity_3.script:setSource("function move()\
-\9\
-\9--GameMode.setGameFlag(\"HideGui\", true)\
-\9--GameMode.setGameFlag(\"DisableMovement\", true)\
-\9--GameMode.setGameFlag(\"DisableMouseLook\", true)\
-\9--GameMode.setEnableControls(false)\
-\9--party.party:move(3)\
-end")
 spawn("floor_trigger",16,14,3,0,"floor_trigger_11")
 floor_trigger_11.floortrigger:setTriggeredByParty(true)
 floor_trigger_11.floortrigger:setTriggeredByMonster(true)
@@ -353,7 +297,7 @@ floor_trigger_12.floortrigger:addConnector("onActivate", "script_dialogue", "set
 spawn("script_entity",15,15,3,0,"script_dialogue")
 script_dialogue.script:loadFile("mod_assets/scripts/dialogues/dialogue_wizards.lua")
 spawn("castle_ceiling_lantern",4,20,1,0,"castle_ceiling_lantern_1")
-spawn("script_entity",1,0,2,0,"script_entity_6")
+spawn("script_entity",0,1,2,0,"script_entity_6")
 script_entity_6.script:loadFile("mod_assets/scripts/refresh.lua")
 spawn("timer",1,1,1,0,"timer_1")
 timer_1.timer:setTimerInterval(1)
@@ -365,6 +309,48 @@ spawn("script_entity",15,12,3,0,"script_dialogue_03")
 script_dialogue_03.script:loadFile("mod_assets/scripts/dialogues/dialogue_03.lua")
 spawn("script_entity",16,12,2,0,"script_dialogue_04")
 script_dialogue_04.script:loadFile("mod_assets/scripts/dialogues/dialogue_04.lua")
+spawn("healing_crystal",21,14,3,0,"healing_crystal_2")
+spawn("potion_healing",23,7,0,0,"potion_healing_1")
+spawn("borra",21,7,0,0,"borra_1")
+spawn("torch_holder",21,8,2,0,"torch_holder_21")
+torch_holder_21.controller:setHasTorch(true)
+spawn("torch_holder",23,8,2,0,"torch_holder_22")
+torch_holder_22.controller:setHasTorch(true)
+spawn("floor_trigger",23,7,1,0,"floor_trigger_10")
+floor_trigger_10.floortrigger:setTriggeredByParty(true)
+floor_trigger_10.floortrigger:setTriggeredByMonster(false)
+floor_trigger_10.floortrigger:setTriggeredByItem(false)
+floor_trigger_10.floortrigger:setTriggeredByDigging(false)
+floor_trigger_10.floortrigger:setDisableSelf(true)
+floor_trigger_10.floortrigger:addConnector("onActivate", "script_messages", "message9")
+spawn("floor_trigger",21,7,2,0,"floor_trigger_16")
+floor_trigger_16.floortrigger:setTriggeredByParty(true)
+floor_trigger_16.floortrigger:setTriggeredByMonster(false)
+floor_trigger_16.floortrigger:setTriggeredByItem(false)
+floor_trigger_16.floortrigger:setTriggeredByDigging(false)
+floor_trigger_16.floortrigger:setDisableSelf(true)
+floor_trigger_16.floortrigger:addConnector("onActivate", "script_messages", "message10")
+spawn("lock_round",21,4,1,0,"lock_round_1")
+lock_round_1.lock:setOpenedBy("brass_key")
+lock_round_1.lock:addConnector("onActivate", "dungeon_door_iron_4", "open")
+spawn("dungeon_pressure_plate",27,2,1,0,"dungeon_pressure_plate_2")
+dungeon_pressure_plate_2.floortrigger:setTriggeredByParty(true)
+dungeon_pressure_plate_2.floortrigger:setTriggeredByMonster(true)
+dungeon_pressure_plate_2.floortrigger:setTriggeredByItem(true)
+dungeon_pressure_plate_2.floortrigger:setTriggeredByDigging(false)
+dungeon_pressure_plate_2.floortrigger:setDisableSelf(false)
+dungeon_pressure_plate_2.floortrigger:addConnector("onToggle", "dungeon_door_iron_6", "toggle")
+spawn("dungeon_door_iron",29,2,3,0,"dungeon_door_iron_6")
+spawn("torch_holder",26,2,3,0,"torch_holder_23")
+torch_holder_23.controller:setHasTorch(true)
+spawn("rock",28,2,0,0,"rock_1")
+spawn("floor_trigger",28,2,3,0,"floor_trigger_17")
+floor_trigger_17.floortrigger:setTriggeredByParty(true)
+floor_trigger_17.floortrigger:setTriggeredByMonster(false)
+floor_trigger_17.floortrigger:setTriggeredByItem(false)
+floor_trigger_17.floortrigger:setTriggeredByDigging(false)
+floor_trigger_17.floortrigger:setDisableSelf(true)
+floor_trigger_17.floortrigger:addConnector("onActivate", "script_messages", "message12")
 
 --- level 2 ---
 
@@ -485,6 +471,7 @@ floor_trigger_14.floortrigger:addConnector("onActivate", "script_entity_4", "dea
 spawn("script_entity",20,10,0,0,"script_entity_4")
 script_entity_4.script:setSource("function deactivateTeleport()\
 \9findEntity(\"teleporter_blue\"):destroy()\
+\9findEntity(\"healing_crystal_2\").crystal:activate();\
 end")
 
 --- level 3 ---
@@ -606,6 +593,7 @@ floor_trigger_15.floortrigger:addConnector("onActivate", "script_entity_5", "dea
 spawn("script_entity",20,10,3,0,"script_entity_5")
 script_entity_5.script:setSource("function deactivateTeleport()\
 \9findEntity(\"teleporter_red\"):destroy()\
+\9findEntity(\"healing_crystal_2\").crystal:activate();\
 end")
 
 --- level 4 ---
