@@ -9,13 +9,13 @@ defineObject{
       {
         class = "Party",
       onMove = function(party,dir,arg1)
-         hudPrint(party.go.id .. "moving to" .. dir)
+         print(party.go.id .. "moving to" .. dir)
       end,
       -- WORKS
       onDie = function(party,champion)
          print(party.go.id,champion:getName(),'died')
 				 party.party:heal()
       end,
-      }
+    },
    },
 }
