@@ -16,7 +16,7 @@ function showDemoDialogue(sender)
 	if(isDone) then
 		return;
 	end
-	
+
 	_showIntroPage();
 end
 
@@ -27,13 +27,13 @@ end
 -- Internal Methods
 
 function _showIntroPage()
-		
-	_faceWizard("wizard_1")
-	findEntity("wizard_1").monster:turnLeft();
-	
+
+	_faceWizard("red_wizard_1")
+	findEntity("red_wizard_1").monster:turnRight();
+
 	local page = {
-		speakerName = "Blue Wizard",
-		speakerMessage = "Hi! I see you finished my Blue Dungeon. Amazing!",
+		speakerName = "Red Wizard",
+		speakerMessage = "Hi! I see you finished the dungeon B. Amazing!",
 		onFinish = self.go.id..".script._introCallback",
 		responses = {
 			{ text = "It was easy!" },
@@ -46,34 +46,34 @@ function _showIntroPage()
 end
 
 function _introCallback(response)
-	
+
 	if ( response == 1 ) then
 		nextResponse = "Haha! "
 	end
-	
+
 	if ( response == 2 ) then
-		nextResponse = "If you like chalenges, you'll like my dungeon! "
-	end	
-	
+		nextResponse = "You still have one more challenge! "
+	end
+
 	if ( response == 3 ) then
 		nextResponse = "That's the job of an warrior, right!?"
-	end 
+	end
 	_showSecondPage()
 end
 
 
 function _showSecondPage()
 
-	_faceWizard("red_wizard_1")
-	findEntity("red_wizard_1").monster:turnRight();
-	
+	_faceWizard("wizard_1")
+	findEntity("wizard_1").monster:turnLeft();
+
 	local page = {
-		speakerName = "Red Wizard",
-		speakerMessage = nextResponse .. "Now it's time to try my Red Dungeon. Are you ready?",
+		speakerName = "Wizard",
+		speakerMessage = nextResponse .. "Now it's time to try my Dungeon A. Are you ready?",
 		onFinish = self.go.id..".script._secondCallback",
 		responses = {
 			{ text = "Always ready for adventure."},
-			{ text = "I'm tired."},			
+			{ text = "I'm tired."},
 			{ text = "It's my job, right?"}
 		}
 	}
@@ -82,25 +82,25 @@ function _showSecondPage()
 end
 
 function _secondCallback(response)
-	
+
 	if ( response == 1 ) then
 		nextResponse = "That's the spirit! "
 	end
-	
+
 	if ( response == 2 ) then
 		nextResponse = "Let me heal you up! "
-	end	
-	
+	end
+
 	if ( response == 3 ) then
 		nextResponse = "I love your humor! "
-	end 
+	end
 	_showThirdPage()
 end
 
 function _showThirdPage()
 
 	_faceWizard("red_wizard_1")
-	
+
 	local page = {
 		speakerName = "Red Wizard",
 		speakerMessage = nextResponse .. "Let me just take away all your stuff, and you can enter the portal.",
@@ -121,11 +121,11 @@ function _thirdCallback(response)
 	end
 	party.party:heal()
 	isDone = true;
-	
+
 	local teleprt = spawn("teleporter", 1, 14, 14, 0, 0, "teleporter_red")
 	teleprt.teleporter:setTeleportTarget(3, 20, 11, 0)
 	teleprt.teleporter:setSpin("south")
-	
+
 	findEntity("wizard_1").monster:turnRight();
 	findEntity("red_wizard_1").monster:turnLeft();
 end
@@ -135,4 +135,3 @@ function _faceWizard(name)
 	local red = findEntity(name)
 	party:setPosition(party.x, party.y, getDirection(red.x - party.x, red.y - party.y), party.elevation, party.level)
 end
-

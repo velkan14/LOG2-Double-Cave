@@ -44,7 +44,7 @@ defineObject{
 			gfxIndexPowerAttack = 460,
 			impactSound = "impact_blade",
 			weight = 4.0,
-			traits = { "heavy_weapon", "axe" },
+			traits = { "light_weapon", "axe" },
 		},
 		{
 			class = "MeleeAttack",
@@ -53,7 +53,35 @@ defineObject{
 			cooldown = 3.2,
 			swipe = "horizontal",
 			attackSound = "swipe",
-			powerAttackTemplate = "chop",
+		},
+	},
+	tags = { "weapon" },
+}
+
+defineObject{
+	name = "skullcleave",
+	baseObject = "base_item",
+	components = {
+		{
+			class = "Model",
+			model = "assets/models/items/skeleton_knight_axe.fbx",
+		},
+		{
+			class = "Item",
+			uiName = "Skullcleave",
+			gfxIndex = 294,
+			gfxIndexPowerAttack = 476,
+			impactSound = "impact_blade",
+			weight = 2.4,
+			traits = { "light_weapon", "axe" },
+		},
+		{
+			class = "MeleeAttack",
+			attackPower = 15,
+			accuracy = 0,
+			cooldown = 2.7,
+			swipe = "vertical",
+			attackSound = "swipe",
 		},
 	},
 	tags = { "weapon" },

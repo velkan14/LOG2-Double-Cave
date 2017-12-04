@@ -21,31 +21,31 @@ loadLayer("tiles", {
 	5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
 	5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
 	5,5,5,5,5,5,5,5,5,5,5,5,5,3,3,4,4,5,5,5,4,4,5,5,5,5,3,3,3,3,3,5,
-	5,5,5,5,3,3,3,3,3,3,3,3,3,3,5,4,4,4,4,4,4,4,3,3,3,3,3,5,5,5,3,5,
+	5,5,5,5,3,3,3,3,3,3,3,5,5,5,5,4,4,4,4,4,4,4,3,3,3,3,3,5,5,5,3,5,
 	5,5,3,3,3,5,5,5,5,5,5,5,5,5,5,4,4,5,5,5,4,4,5,5,5,5,5,3,3,3,3,5,
 	5,5,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,3,5,5,5,5,
 	5,5,3,3,3,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,3,5,5,5,5,
-	5,5,5,5,5,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,3,5,3,5,5,4,4,4,5,5,5,
-	5,5,5,3,3,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,3,3,3,3,3,3,4,4,4,5,5,5,
-	5,5,5,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,3,5,5,5,5,5,4,4,4,5,5,5,
-	5,5,3,3,3,5,5,5,5,5,5,5,2,2,2,2,2,2,2,5,3,5,2,2,5,5,5,5,5,5,5,5,
-	5,5,3,3,3,5,5,5,5,5,5,5,2,2,2,2,2,2,2,2,1,2,2,2,5,5,5,5,5,5,5,5,
-	5,5,3,3,3,5,5,5,5,5,5,5,2,2,2,2,2,1,1,2,1,1,1,2,5,5,5,5,5,5,5,5,
-	5,5,3,3,3,5,5,5,5,5,5,5,2,2,2,2,1,1,1,2,1,1,1,2,5,5,5,5,5,5,5,5,
-	5,5,5,5,5,5,5,5,5,5,5,5,2,2,1,1,1,1,1,1,1,1,1,2,5,5,5,5,5,5,5,5,
-	5,5,5,5,5,5,5,5,5,5,5,5,2,2,2,2,1,1,1,2,2,2,2,2,5,5,5,5,5,5,5,5,
+	5,5,5,5,5,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,4,4,5,5,5,
+	5,5,5,3,3,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,5,5,5,
+	5,5,5,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,3,5,5,5,4,4,4,5,5,5,
+	5,5,3,3,3,5,5,5,5,5,5,5,2,2,2,2,2,2,2,2,2,2,3,3,3,5,5,5,5,5,5,5,
+	5,5,3,3,3,5,5,5,5,5,5,5,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,5,5,5,5,
+	5,5,3,3,3,5,5,5,5,5,5,5,2,2,2,2,2,1,1,2,2,2,2,2,5,5,5,3,5,5,5,5,
+	5,5,3,3,3,5,5,5,5,5,5,5,2,2,2,2,1,1,1,2,1,1,1,2,5,5,3,3,3,5,5,5,
+	5,5,5,5,5,5,5,5,5,5,5,5,2,2,1,1,1,1,1,1,1,1,1,1,4,4,4,3,3,5,5,5,
+	5,5,5,5,5,5,5,5,5,5,5,5,2,2,2,2,1,1,1,2,1,1,1,2,5,5,3,4,4,5,5,5,
 	5,5,5,5,5,5,5,5,5,5,5,5,2,2,2,2,2,1,1,2,2,2,2,2,5,5,5,5,5,5,5,5,
 	5,5,5,5,5,5,5,5,5,5,5,5,2,2,2,2,2,2,2,2,2,2,2,2,5,5,5,5,5,5,5,5,
 	5,5,2,2,2,2,2,2,5,5,5,5,2,2,2,2,2,2,2,2,2,2,2,2,5,5,5,5,5,5,5,5,
 	5,2,2,1,1,1,2,2,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
-	5,2,1,1,1,1,1,2,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
+	5,2,1,1,1,1,1,2,5,5,5,5,5,5,5,3,3,3,3,5,5,5,5,5,5,5,5,5,5,5,5,5,
 	5,2,2,1,1,1,2,2,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
 	5,5,2,2,2,2,2,2,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
 	5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
 	5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
 	5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
-	5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
-	5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
+	5,5,5,3,3,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
+	5,5,5,3,3,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
 	5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
 	5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
 	5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
@@ -56,7 +56,7 @@ spawn("torch_holder",4,11,1,0,"torch_holder_5")
 torch_holder_5.controller:setHasTorch(true)
 spawn("torch_holder",4,3,0,0,"torch_holder_7")
 torch_holder_7.controller:setHasTorch(true)
-spawn("starting_location",3,12,0,0,"starting_location")
+spawn("starting_location",18,14,3,0,"starting_location")
 spawn("torch_holder",5,8,1,0,"torch_holder_6")
 torch_holder_6.controller:setHasTorch(true)
 spawn("torch_holder",5,6,0,0,"torch_holder_8")
@@ -76,13 +76,9 @@ spawn("turtle",27,8,1,0,"turtle_1")
 turtle_1.monster:setAIState("guard")
 turtle_1.monster:addConnector("onDie", "dungeon_door_portcullis_6", "open")
 spawn("dungeon_wall_text",8,3,2,0,"dungeon_wall_text_2")
-dungeon_wall_text_2.walltext:setWallText("You can pick up a torch for further lightning.")
+dungeon_wall_text_2.walltext:setWallText("You can pick up a torch for further lightning. Be careful, they can run out of flames.")
 spawn("dungeon_door_iron_barred",8,3,1,0,"dungeon_door_iron_barred_1")
 spawn("dungeon_door_portcullis",26,8,3,0,"dungeon_door_portcullis_6")
-spawn("castle_ceiling_light",26,7,1,0,"castle_ceiling_light_1")
-spawn("castle_ceiling_light",28,9,1,0,"castle_ceiling_light_2")
-spawn("castle_ceiling_light",26,9,2,0,"castle_ceiling_light_3")
-spawn("castle_ceiling_light",28,7,1,0,"castle_ceiling_light_5")
 spawn("torch_holder",20,2,0,0,"torch_holder_11")
 torch_holder_11.controller:setHasTorch(true)
 spawn("torch_holder",21,4,2,0,"torch_holder_13")
@@ -114,16 +110,15 @@ script_entity_2.script:setSource("function clear()\
 \9hudPrint(champ3:getClass());\
 \9hudPrint(champ4:getClass());\
 end")
-spawn("dungeon_door_portcullis",20,10,2,0,"dungeon_door_portcullis_7")
-dungeon_door_portcullis_7.door:setDoorState("open")
-spawn("floor_trigger",20,11,1,0,"floor_trigger_1")
+spawn("floor_trigger",22,14,1,0,"floor_trigger_1")
 floor_trigger_1.floortrigger:setTriggeredByParty(true)
 floor_trigger_1.floortrigger:setTriggeredByMonster(false)
 floor_trigger_1.floortrigger:setTriggeredByItem(false)
 floor_trigger_1.floortrigger:setTriggeredByDigging(false)
 floor_trigger_1.floortrigger:setDisableSelf(true)
-floor_trigger_1.floortrigger:addConnector("onActivate", "dungeon_door_portcullis_7", "close")
+floor_trigger_1.floortrigger:addConnector("onActivate", "castle_door_portcullis_1", "close")
 floor_trigger_1.floortrigger:addConnector("onActivate", "script_messages", "message11")
+floor_trigger_1.floortrigger:addConnector("onActivate", "script_entity_3", "hook")
 spawn("castle_pillar_light",18,16,0,0,"castle_pillar_light_1")
 spawn("castle_pillar_light",18,13,3,0,"castle_pillar_light_2")
 spawn("wizard",16,15,1,0,"wizard_1")
@@ -131,11 +126,9 @@ wizard_1.brain:disable()
 spawn("red_wizard",16,13,1,0,"red_wizard_1")
 red_wizard_1.brain:disable()
 spawn("castle_ceiling_light",17,14,2,0,"castle_ceiling_light_6")
-spawn("castle_ceiling_light",21,13,2,0,"castle_ceiling_light_8")
+spawn("castle_ceiling_light",21,14,2,0,"castle_ceiling_light_8")
 spawn("script_entity",0,2,0,0,"script_messages")
 script_messages.script:loadFile("mod_assets/scripts/messages.lua")
-spawn("grimtk",0,0,2,0,"grimtk_1")
-grimtk_1.script:setSource("")
 spawn("floor_trigger",3,8,3,0,"floor_trigger_2")
 floor_trigger_2.floortrigger:setTriggeredByParty(true)
 floor_trigger_2.floortrigger:setTriggeredByMonster(false)
@@ -310,26 +303,18 @@ script_dialogue_03.script:loadFile("mod_assets/scripts/dialogues/dialogue_03.lua
 spawn("script_entity",16,12,2,0,"script_dialogue_04")
 script_dialogue_04.script:loadFile("mod_assets/scripts/dialogues/dialogue_04.lua")
 spawn("healing_crystal",21,14,3,0,"healing_crystal_2")
-spawn("potion_healing",23,7,0,0,"potion_healing_1")
-spawn("borra",21,7,0,0,"borra_1")
-spawn("torch_holder",21,8,2,0,"torch_holder_21")
+spawn("torch_holder",22,8,0,0,"torch_holder_21")
 torch_holder_21.controller:setHasTorch(true)
 spawn("torch_holder",23,8,2,0,"torch_holder_22")
 torch_holder_22.controller:setHasTorch(true)
-spawn("floor_trigger",23,7,1,0,"floor_trigger_10")
+spawn("floor_trigger",23,8,1,0,"floor_trigger_10")
 floor_trigger_10.floortrigger:setTriggeredByParty(true)
 floor_trigger_10.floortrigger:setTriggeredByMonster(false)
 floor_trigger_10.floortrigger:setTriggeredByItem(false)
 floor_trigger_10.floortrigger:setTriggeredByDigging(false)
 floor_trigger_10.floortrigger:setDisableSelf(true)
 floor_trigger_10.floortrigger:addConnector("onActivate", "script_messages", "message9")
-spawn("floor_trigger",21,7,2,0,"floor_trigger_16")
-floor_trigger_16.floortrigger:setTriggeredByParty(true)
-floor_trigger_16.floortrigger:setTriggeredByMonster(false)
-floor_trigger_16.floortrigger:setTriggeredByItem(false)
-floor_trigger_16.floortrigger:setTriggeredByDigging(false)
-floor_trigger_16.floortrigger:setDisableSelf(true)
-floor_trigger_16.floortrigger:addConnector("onActivate", "script_messages", "message10")
+floor_trigger_10.floortrigger:addConnector("onActivate", "script_entity_8", "hook")
 spawn("lock_round",21,4,1,0,"lock_round_1")
 lock_round_1.lock:setOpenedBy("brass_key")
 lock_round_1.lock:addConnector("onActivate", "dungeon_door_iron_4", "open")
@@ -353,11 +338,94 @@ floor_trigger_17.floortrigger:setDisableSelf(true)
 floor_trigger_17.floortrigger:addConnector("onActivate", "script_messages", "message12")
 spawn("script_entity",13,14,2,0,"script_hook")
 script_hook.script:loadFile("mod_assets/scripts/hook.lua")
+spawn("turtle",17,20,3,0,"turtle_11")
+spawn("torch_holder",17,20,0,0,"torch_holder_24")
+torch_holder_24.controller:setHasTorch(true)
+spawn("mummy",16,20,3,0,"mummy_10")
+spawn("skeleton_trooper",18,20,3,0,"skeleton_trooper_5")
+spawn("dungeon_stairs_up",13,2,3,0,"dungeon_stairs_up_4")
+spawn("dungeon_stairs_up",10,3,1,0,"dungeon_stairs_up_3")
+spawn("dungeon_door_wooden",23,8,3,0,"dungeon_door_wooden_3")
+spawn("script_entity",23,7,0,0,"script_entity_8")
+script_entity_8.script:loadFile("mod_assets/scripts/sleep.lua")
+spawn("floor_trigger",22,8,1,0,"floor_trigger_21")
+floor_trigger_21.floortrigger:setTriggeredByParty(true)
+floor_trigger_21.floortrigger:setTriggeredByMonster(false)
+floor_trigger_21.floortrigger:setTriggeredByItem(false)
+floor_trigger_21.floortrigger:setTriggeredByDigging(false)
+floor_trigger_21.floortrigger:setDisableSelf(true)
+floor_trigger_21.floortrigger:addConnector("onActivate", "script_entity_8", "unHook")
+floor_trigger_21.floortrigger:addConnector("onActivate", "script_messages", "message10")
+floor_trigger_21.floortrigger:addConnector("onActivate", "script_entity_9", "hook")
+spawn("dungeon_alcove",22,8,3,0,"dungeon_alcove_10")
+spawn("borra",22,8,3,0,"borra_7")
+dungeon_alcove_10.surface:addItem(borra_7.item)
+spawn("dungeon_wall_text",23,8,0,0,"dungeon_wall_text_5")
+dungeon_wall_text_5.walltext:setWallText("Press 'R' to sleep.")
+spawn("dungeon_wall_text",21,2,1,0,"dungeon_wall_text_6")
+dungeon_wall_text_6.walltext:setWallText("Use the key in the lock hole.")
+spawn("dungeon_wall_text",23,3,0,0,"dungeon_wall_text_7")
+dungeon_wall_text_7.walltext:setWallText("Press the button.")
+spawn("dungeon_wall_text",25,3,0,0,"dungeon_wall_text_8")
+dungeon_wall_text_8.walltext:setWallText("Pull the chain.")
+spawn("dungeon_wall_text",28,2,0,0,"dungeon_wall_text_9")
+dungeon_wall_text_9.walltext:setWallText("Put any object in the pressure plate.")
+spawn("script_entity",23,6,0,0,"script_entity_9")
+script_entity_9.script:loadFile("mod_assets/scripts/eat.lua")
+spawn("dungeon_alcove",24,11,2,0,"dungeon_alcove_11")
+spawn("potion_healing",24,11,2,0,"potion_healing_8")
+dungeon_alcove_11.surface:addItem(potion_healing_8.item)
+spawn("torch_holder",24,10,0,0,"torch_holder_38")
+torch_holder_38.controller:setHasTorch(true)
+spawn("torch_holder",27,11,1,0,"torch_holder_39")
+torch_holder_39.controller:setHasTorch(true)
+spawn("floor_trigger",27,13,3,0,"floor_trigger_16")
+floor_trigger_16.floortrigger:setTriggeredByParty(true)
+floor_trigger_16.floortrigger:setTriggeredByMonster(false)
+floor_trigger_16.floortrigger:setTriggeredByItem(false)
+floor_trigger_16.floortrigger:setTriggeredByDigging(false)
+floor_trigger_16.floortrigger:setDisableSelf(true)
+floor_trigger_16.floortrigger:addConnector("onActivate", "script_entity_9", "unHook")
+floor_trigger_16.floortrigger:addConnector("onActivate", "dungeon_door_portcullis_10", "close")
+spawn("turtle",27,14,2,0,"turtle_12")
+turtle_12.monster:setAIState("guard")
+turtle_12.monster:addConnector("onDie", "dungeon_door_wooden_4", "open")
+spawn("dungeon_ceiling_shaft",25,11,0,0,"dungeon_ceiling_shaft_2")
+spawn("dungeon_ceiling_shaft",22,10,0,0,"dungeon_ceiling_shaft_3")
+spawn("dungeon_door_portcullis",27,12,2,0,"dungeon_door_portcullis_10")
+dungeon_door_portcullis_10.door:setDoorState("open")
+spawn("dungeon_door_wooden",25,14,1,0,"dungeon_door_wooden_4")
+spawn("mine_ceiling_lantern",27,14,3,0,"mine_ceiling_lantern_1")
+spawn("ice_guardian",3,26,2,0,"ice_guardian_1")
+ice_guardian_1.brain:disable()
+spawn("medusa",5,26,2,0,"medusa_1")
+medusa_1.brain:disable()
+spawn("uggardian",4,26,2,0,"uggardian_1")
+uggardian_1.brain:disable()
+spawn("torch_holder",5,27,2,0,"torch_holder_40")
+torch_holder_40.controller:setHasTorch(true)
+spawn("torch_holder",3,27,2,0,"torch_holder_43")
+torch_holder_43.controller:setHasTorch(true)
+spawn("castle_door_portcullis",22,14,1,0,"castle_door_portcullis_1")
+castle_door_portcullis_1.door:setDoorState("open")
+spawn("grimtk",0,0,3,0,"grimtk_1")
+grimtk_1.script:setSource("")
+spawn("script_entity",22,12,1,0,"script_entity_3")
+script_entity_3.script:loadFile("mod_assets/scripts/save.lua")
+spawn("castle_door_portcullis",20,14,3,0,"castle_door_portcullis_2")
+spawn("floor_trigger",19,14,2,0,"floor_trigger_18")
+floor_trigger_18.floortrigger:setTriggeredByParty(true)
+floor_trigger_18.floortrigger:setTriggeredByMonster(false)
+floor_trigger_18.floortrigger:setTriggeredByItem(false)
+floor_trigger_18.floortrigger:setTriggeredByDigging(false)
+floor_trigger_18.floortrigger:setDisableSelf(false)
+floor_trigger_18.floortrigger:addConnector("onActivate", "castle_door_portcullis_2", "close")
+spawn("mine_ceiling_lantern",27,8,2,0,"mine_ceiling_lantern_2")
 
 --- level 2 ---
 
 newMap{
-	name = "Blue Level",
+	name = "B Level",
 	width = 32,
 	height = 32,
 	levelCoord = {0,0,0},
@@ -417,7 +485,7 @@ spawn("dungeon_wall_broken_02",16,14,2,0,"dungeon_wall_broken_02_4")
 spawn("torch_holder",21,14,1,0,"torch_holder_2")
 torch_holder_2.controller:setHasTorch(true)
 spawn("dungeon_wall_text",21,14,3,0,"dungeon_wall_text_1")
-dungeon_wall_text_1.walltext:setWallText("Halls of the Dead")
+dungeon_wall_text_1.walltext:setWallText("Dungeon B")
 spawn("dungeon_door_portcullis",21,14,2,0,"dungeon_door_portcullis_1")
 dungeon_door_portcullis_1.door:setPullChain(true)
 spawn("wall_button",17,16,3,0,"wall_button_1")
@@ -465,21 +533,112 @@ spawn("iron_key",14,23,0,0,"iron_key_1")
 dungeon_alcove_3.surface:addItem(iron_key_1.item)
 spawn("floor_trigger",20,11,0,0,"floor_trigger_14")
 floor_trigger_14.floortrigger:setTriggeredByParty(true)
-floor_trigger_14.floortrigger:setTriggeredByMonster(true)
-floor_trigger_14.floortrigger:setTriggeredByItem(true)
+floor_trigger_14.floortrigger:setTriggeredByMonster(false)
+floor_trigger_14.floortrigger:setTriggeredByItem(false)
 floor_trigger_14.floortrigger:setTriggeredByDigging(false)
-floor_trigger_14.floortrigger:setDisableSelf(false)
+floor_trigger_14.floortrigger:setDisableSelf(true)
 floor_trigger_14.floortrigger:addConnector("onActivate", "script_entity_4", "deactivateTeleport")
 spawn("script_entity",20,10,0,0,"script_entity_4")
 script_entity_4.script:setSource("function deactivateTeleport()\
 \9findEntity(\"teleporter_blue\"):destroy()\
 \9findEntity(\"healing_crystal_2\").crystal:activate();\
 end")
+spawn("turtle",15,12,1,0,"turtle_2")
+turtle_2.monster:setAIState("guard")
+spawn("turtle",21,16,0,0,"turtle_3")
+turtle_3.monster:setAIState("guard")
+spawn("turtle",20,17,2,0,"turtle_4")
+turtle_4.monster:setAIState("guard")
+spawn("turtle",18,18,0,0,"turtle_5")
+turtle_5.monster:setAIState("guard")
+spawn("turtle",14,19,0,0,"turtle_6")
+turtle_6.monster:setAIState("guard")
+spawn("skeleton_trooper",7,19,0,0,"skeleton_trooper_1")
+skeleton_trooper_1.monster:setAIState("guard")
+spawn("mummy",14,17,0,0,"mummy_1")
+mummy_1.monster:setAIState("guard")
+spawn("mummy",8,21,0,0,"mummy_2")
+mummy_2.monster:setAIState("guard")
+spawn("potion_healing",10,19,0,0,"potion_healing_2")
+spawn("potion_healing",20,21,1,0,"potion_healing_3")
+spawn("machete",16,10,0,0,"machete_1")
+spawn("battle_axe",13,23,3,0,"battle_axe_1")
+spawn("borra",16,14,3,0,"borra_2")
+spawn("leather_boots",21,13,1,0,"leather_boots_1")
+spawn("leather_pants",21,19,1,0,"leather_pants_2")
+spawn("leather_brigandine",20,22,3,0,"leather_brigandine_2")
+spawn("leather_cap",22,15,1,0,"leather_cap_3")
 
 --- level 3 ---
 
 newMap{
-	name = "Red Level",
+	name = "A Exit",
+	width = 32,
+	height = 32,
+	levelCoord = {1,0,-1},
+	ambientTrack = "dungeon",
+	tiles = {
+		"castle_floor",
+		"dungeon_wall",
+	}
+}
+
+loadLayer("tiles", {
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+})
+
+spawn("castle_stairs_down",6,20,1,0,"castle_stairs_down_1")
+spawn("castle_ceiling_lantern",4,20,0,0,"castle_ceiling_lantern_2")
+spawn("teleporter",2,20,3,0,"teleporter_2")
+teleporter_2.teleporter:setTeleportTarget(1,21,13,0)
+teleporter_2.teleporter:setSpin("none")
+teleporter_2.teleporter:setTriggeredByParty(true)
+teleporter_2.teleporter:setTriggeredByMonster(true)
+teleporter_2.teleporter:setTriggeredByItem(true)
+teleporter_2.teleporter:setTriggeredBySpell(true)
+spawn("floor_trigger",3,20,2,0,"floor_trigger_13")
+floor_trigger_13.floortrigger:setTriggeredByParty(true)
+floor_trigger_13.floortrigger:setTriggeredByMonster(false)
+floor_trigger_13.floortrigger:setTriggeredByItem(false)
+floor_trigger_13.floortrigger:setTriggeredByDigging(false)
+floor_trigger_13.floortrigger:setDisableSelf(true)
+floor_trigger_13.floortrigger:addConnector("onActivate", "script_dialogue", "setRedTrue")
+
+--- level 4 ---
+
+newMap{
+	name = "A Level",
 	width = 32,
 	height = 32,
 	levelCoord = {1,0,0},
@@ -541,7 +700,7 @@ spawn("dungeon_alcove",19,17,3,0,"dungeon_alcove_9")
 spawn("wooden_box",19,17,3,0,"wooden_box_2")
 dungeon_alcove_9.surface:addItem(wooden_box_2.item)
 spawn("dungeon_wall_text",21,14,3,0,"dungeon_wall_text_3")
-dungeon_wall_text_3.walltext:setWallText("Halls of the Dead")
+dungeon_wall_text_3.walltext:setWallText("Dungeon A")
 spawn("dungeon_door_portcullis",16,12,2,0,"dungeon_door_portcullis_4")
 dungeon_door_portcullis_4.door:setPullChain(true)
 spawn("dungeon_door_portcullis",21,15,0,0,"dungeon_door_portcullis_5")
@@ -587,54 +746,96 @@ spawn("altar",7,20,3,0,"altar_2")
 spawn("dungeon_stairs_up",5,20,3,0,"dungeon_stairs_up_2")
 spawn("floor_trigger",20,11,3,0,"floor_trigger_15")
 floor_trigger_15.floortrigger:setTriggeredByParty(true)
-floor_trigger_15.floortrigger:setTriggeredByMonster(true)
-floor_trigger_15.floortrigger:setTriggeredByItem(true)
+floor_trigger_15.floortrigger:setTriggeredByMonster(false)
+floor_trigger_15.floortrigger:setTriggeredByItem(false)
 floor_trigger_15.floortrigger:setTriggeredByDigging(false)
-floor_trigger_15.floortrigger:setDisableSelf(false)
+floor_trigger_15.floortrigger:setDisableSelf(true)
 floor_trigger_15.floortrigger:addConnector("onActivate", "script_entity_5", "deactivateTeleport")
 spawn("script_entity",20,10,3,0,"script_entity_5")
 script_entity_5.script:setSource("function deactivateTeleport()\
 \9findEntity(\"teleporter_red\"):destroy()\
 \9findEntity(\"healing_crystal_2\").crystal:activate();\
 end")
+spawn("leather_brigandine",16,10,0,0,"leather_brigandine_3")
+spawn("leather_pants",18,15,0,0,"leather_pants_3")
+spawn("leather_cap",21,19,1,0,"leather_cap_1")
+spawn("potion_healing",22,15,1,0,"potion_healing_4")
+spawn("potion_healing",19,18,3,0,"potion_healing_5")
+spawn("potion_healing",6,19,3,0,"potion_healing_6")
+spawn("leather_boots",15,20,1,0,"leather_boots_3")
+spawn("borra",16,14,1,0,"borra_3")
+spawn("borra",17,18,2,0,"borra_4")
+spawn("borra",12,21,1,0,"borra_5")
+spawn("borra",7,21,2,0,"borra_6")
+spawn("skeleton_trooper",8,19,2,0,"skeleton_trooper_2")
+skeleton_trooper_2.monster:setAIState("guard")
+spawn("skeleton_trooper",8,21,1,0,"skeleton_trooper_3")
+skeleton_trooper_3.monster:setAIState("guard")
+spawn("skeleton_trooper",13,23,0,0,"skeleton_trooper_4")
+skeleton_trooper_4.monster:setAIState("guard")
+spawn("mummy",10,20,3,0,"mummy_3")
+mummy_3.monster:setAIState("guard")
+spawn("mummy",15,21,2,0,"mummy_4")
+mummy_4.monster:setAIState("guard")
+spawn("mummy",13,19,0,0,"mummy_5")
+mummy_5.monster:setAIState("guard")
+spawn("mummy",18,20,0,0,"mummy_6")
+mummy_6.monster:setAIState("guard")
+spawn("mummy",20,19,0,0,"mummy_7")
+mummy_7.monster:setAIState("guard")
+spawn("mummy",20,21,0,0,"mummy_8")
+mummy_8.monster:setAIState("guard")
+spawn("mummy",15,11,2,0,"mummy_9")
+mummy_9.monster:setAIState("guard")
+spawn("turtle",16,12,2,0,"turtle_7")
+turtle_7.monster:setAIState("guard")
+spawn("turtle",16,13,1,0,"turtle_8")
+turtle_8.monster:setAIState("guard")
+spawn("turtle",18,16,0,0,"turtle_9")
+turtle_9.monster:setAIState("guard")
+spawn("turtle",21,17,0,0,"turtle_10")
+turtle_10.monster:setAIState("guard")
+spawn("potion_healing",20,22,2,0,"potion_healing_7")
+spawn("machete",19,13,2,0,"machete_3")
+spawn("battle_axe",13,17,2,0,"battle_axe_2")
 
---- level 4 ---
+--- level 5 ---
 
 newMap{
-	name = "Red Exit",
+	name = "Maze",
 	width = 32,
 	height = 32,
-	levelCoord = {1,0,-1},
+	levelCoord = {0,0,-2},
 	ambientTrack = "dungeon",
 	tiles = {
-		"castle_floor",
+		"dungeon_floor",
 		"dungeon_wall",
 	}
 }
 
 loadLayer("tiles", {
 	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,2,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,1,1,2,1,2,2,2,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,1,2,1,2,2,2,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,1,2,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,2,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,1,2,1,2,2,1,2,1,2,1,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,1,2,1,2,2,1,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,1,2,1,1,2,1,2,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,1,2,2,1,2,1,2,1,2,1,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,1,2,2,2,2,1,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,1,2,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,1,2,2,2,2,2,2,2,2,1,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,
 	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
 	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
 	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
 	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
 	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
 	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
 	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
@@ -647,19 +848,55 @@ loadLayer("tiles", {
 	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
 })
 
-spawn("castle_stairs_down",6,20,1,0,"castle_stairs_down_1")
-spawn("castle_ceiling_lantern",4,20,0,0,"castle_ceiling_lantern_2")
-spawn("teleporter",2,20,3,0,"teleporter_2")
-teleporter_2.teleporter:setTeleportTarget(1,21,13,0)
-teleporter_2.teleporter:setSpin("none")
-teleporter_2.teleporter:setTriggeredByParty(true)
-teleporter_2.teleporter:setTriggeredByMonster(true)
-teleporter_2.teleporter:setTriggeredByItem(true)
-teleporter_2.teleporter:setTriggeredBySpell(true)
-spawn("floor_trigger",3,20,2,0,"floor_trigger_13")
-floor_trigger_13.floortrigger:setTriggeredByParty(true)
-floor_trigger_13.floortrigger:setTriggeredByMonster(false)
-floor_trigger_13.floortrigger:setTriggeredByItem(false)
-floor_trigger_13.floortrigger:setTriggeredByDigging(false)
-floor_trigger_13.floortrigger:setDisableSelf(false)
-floor_trigger_13.floortrigger:addConnector("onActivate", "script_dialogue", "setRedTrue")
+spawn("dungeon_stairs_down",9,3,3,0,"dungeon_stairs_down_1")
+spawn("torch_holder",14,5,2,0,"torch_holder_25")
+torch_holder_25.controller:setHasTorch(true)
+spawn("torch_holder",19,1,0,0,"torch_holder_26")
+torch_holder_26.controller:setHasTorch(true)
+spawn("torch_holder",19,5,1,0,"torch_holder_27")
+torch_holder_27.controller:setHasTorch(true)
+spawn("torch_holder",12,2,3,0,"torch_holder_28")
+torch_holder_28.controller:setHasTorch(true)
+spawn("torch_holder",10,9,1,0,"torch_holder_29")
+torch_holder_29.controller:setHasTorch(true)
+spawn("floor_trigger",10,6,2,0,"floor_trigger_19")
+floor_trigger_19.floortrigger:setTriggeredByParty(true)
+floor_trigger_19.floortrigger:setTriggeredByMonster(false)
+floor_trigger_19.floortrigger:setTriggeredByItem(false)
+floor_trigger_19.floortrigger:setTriggeredByDigging(false)
+floor_trigger_19.floortrigger:setDisableSelf(true)
+floor_trigger_19.floortrigger:addConnector("onActivate", "script_entity_7", "message1")
+spawn("floor_trigger",12,15,0,0,"floor_trigger_20")
+floor_trigger_20.floortrigger:setTriggeredByParty(true)
+floor_trigger_20.floortrigger:setTriggeredByMonster(false)
+floor_trigger_20.floortrigger:setTriggeredByItem(false)
+floor_trigger_20.floortrigger:setTriggeredByDigging(false)
+floor_trigger_20.floortrigger:setDisableSelf(true)
+floor_trigger_20.floortrigger:addConnector("onActivate", "script_entity_7", "message2")
+spawn("script_entity",6,7,1,0,"script_entity_7")
+script_entity_7.script:setSource("function message1()\
+\9GTKGui.Basic.showInfoMessage(\"If you get lost press 'TAB' to open the map.\");\
+end\
+\
+function message2()\
+\9GTKGui.Basic.showInfoMessage(\"Don't forget to press 'TAB' to open the map.\", 5);\
+end")
+spawn("torch_holder",10,17,2,0,"torch_holder_31")
+torch_holder_31.controller:setHasTorch(true)
+spawn("torch_holder",19,17,1,0,"torch_holder_32")
+torch_holder_32.controller:setHasTorch(true)
+spawn("torch_holder",12,15,3,0,"torch_holder_33")
+torch_holder_33.controller:setHasTorch(true)
+spawn("torch_holder",19,13,1,0,"torch_holder_34")
+torch_holder_34.controller:setHasTorch(true)
+spawn("torch_holder",17,8,2,0,"torch_holder_35")
+torch_holder_35.controller:setHasTorch(true)
+spawn("torch_holder",17,11,2,0,"torch_holder_36")
+torch_holder_36.controller:setHasTorch(true)
+spawn("torch_holder",13,11,2,0,"torch_holder_37")
+torch_holder_37.controller:setHasTorch(true)
+spawn("dungeon_wall_text",10,3,1,0,"dungeon_wall_text_4")
+dungeon_wall_text_4.walltext:setWallText("Labyrinth")
+spawn("torch_holder",10,3,0,0,"torch_holder_30")
+torch_holder_30.controller:setHasTorch(true)
+spawn("dungeon_stairs_down",14,2,1,0,"dungeon_stairs_down_2")

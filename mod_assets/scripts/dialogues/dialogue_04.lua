@@ -16,195 +16,495 @@ questionaireForm = {
 		{
 			number = 1,
 			name = "question1",
-			question = "I was interested in the game's story",
+			question = "I felt content",
 			speaker = "",
 			response = -1,
 			responses = {
-				{ text = "Not at all"},
-				{ text = "Slightly"},
-				{ text = "Moderately"},
-				{ text = "Fairly"},
-				{ text = "Extremely"},
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
 			},
 			done = false
 		},
 		{
 			number = 2,
 			name = "question2",
-			question = "I felt successeful.",
+			question = "I felt skilful.",
 			speaker = "",
 			response = -1,
 			responses = {
-				{ text = "Not at all"},
-				{ text = "Slightly"},
-				{ text = "Moderately"},
-				{ text = "Fairly"},
-				{ text = "Extremely"},
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
 			},
 			done = false
 		},
 		{
 			number = 3,
 			name = "question3",
-			question = "I felt bored.",
+			question = "I was interested in the game's story.",
 			speaker = "",
 			response = -1,
 			responses = {
-				{ text = "Not at all"},
-				{ text = "Slightly"},
-				{ text = "Moderately"},
-				{ text = "Fairly"},
-				{ text = "Extremely"},
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
 			},
 			done = false
 		},
 		{
 			number = 4,
 			name = "question4",
-			question = "I found it impressive.",
+			question = "I through it was fun.",
 			speaker = "",
 			response = -1,
 			responses = {
-				{ text = "Not at all"},
-				{ text = "Slightly"},
-				{ text = "Moderately"},
-				{ text = "Fairly"},
-				{ text = "Extremely"},
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
 			},
 			done = false
 		},
 		{
 			number = 5,
 			name = "question5",
-			question = "I forgot everything around me.",
+			question = "I was fully occupied with the game.",
 			speaker = "",
 			response = -1,
 			responses = {
-				{ text = "Not at all"},
-				{ text = "Slightly"},
-				{ text = "Moderately"},
-				{ text = "Fairly"},
-				{ text = "Extremely"},
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
 			},
 			done = false
 		},
 		{
 			number = 6,
 			name = "question6",
-			question = "I felt frustated.",
+			question = "I felt happy.",
 			speaker = "",
 			response = -1,
 			responses = {
-				{ text = "Not at all"},
-				{ text = "Slightly"},
-				{ text = "Moderately"},
-				{ text = "Fairly"},
-				{ text = "Extremely"},
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
 			},
 			done = false
 		},
 		{
 			number = 7,
 			name = "question7",
-			question = "I found it tiresome.",
+			question = "It gave me a bad mood.",
 			speaker = "",
 			response = -1,
 			responses = {
-				{ text = "Not at all"},
-				{ text = "Slightly"},
-				{ text = "Moderately"},
-				{ text = "Fairly"},
-				{ text = "Extremely"},
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
 			},
 			done = false
 		},
 		{
 			number = 8,
 			name = "question8",
-			question = "I felt irritable.",
+			question = "I tought about other things.",
 			speaker = "",
 			response = -1,
 			responses = {
-				{ text = "Not at all"},
-				{ text = "Slightly"},
-				{ text = "Moderately"},
-				{ text = "Fairly"},
-				{ text = "Extremely"},
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
 			},
 			done = false
 		},
 		{
 			number = 9,
 			name = "question9",
-			question = "I felt skilful.",
+			question = "I found it tiresome.",
 			speaker = "",
 			response = -1,
 			responses = {
-				{ text = "Not at all"},
-				{ text = "Slightly"},
-				{ text = "Moderately"},
-				{ text = "Fairly"},
-				{ text = "Extremely"},
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
 			},
 			done = false
 		},
 		{
 			number = 10,
 			name = "question10",
-			question = "I felt content.",
+			question = "I felt competent.",
 			speaker = "",
 			response = -1,
 			responses = {
-				{ text = "Not at all"},
-				{ text = "Slightly"},
-				{ text = "Moderately"},
-				{ text = "Fairly"},
-				{ text = "Extremely"},
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
 			},
 			done = false
 		},
 		{
 			number = 11,
 			name = "question11",
-			question = "I felt challenged.",
+			question = "I tought it was hard.",
 			speaker = "",
 			response = -1,
 			responses = {
-				{ text = "Not at all"},
-				{ text = "Slightly"},
-				{ text = "Moderately"},
-				{ text = "Fairly"},
-				{ text = "Extremely"},
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
 			},
 			done = false
 		},
 		{
 			number = 12,
 			name = "question12",
-			question = "I had to put a lot of effort into it.",
+			question = "It was aesthetically pleasing.",
 			speaker = "",
 			response = -1,
 			responses = {
-				{ text = "Not at all"},
-				{ text = "Slightly"},
-				{ text = "Moderately"},
-				{ text = "Fairly"},
-				{ text = "Extremely"},
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
 			},
 			done = false
 		},
 		{
 			number = 13,
 			name = "question13",
+			question = "I forgot everything around me.",
+			speaker = "",
+			response = -1,
+			responses = {
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
+			},
+			done = false
+		},
+		{
+			number = 14,
+			name = "question14",
 			question = "I felt good.",
 			speaker = "",
 			response = -1,
 			responses = {
-				{ text = "Not at all"},
-				{ text = "Slightly"},
-				{ text = "Moderately"},
-				{ text = "Fairly"},
-				{ text = "Extremely"},
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
+			},
+			done = false
+		},
+		{
+			number = 15,
+			name = "question15",
+			question = "I was good at it.",
+			speaker = "",
+			response = -1,
+			responses = {
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
+			},
+			done = false
+		},
+		{
+			number = 16,
+			name = "question16",
+			question = "I felt bored.",
+			speaker = "",
+			response = -1,
+			responses = {
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
+			},
+			done = false
+		},
+		{
+			number = 17,
+			name = "question17",
+			question = "I felt successful.",
+			speaker = "",
+			response = -1,
+			responses = {
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
+			},
+			done = false
+		},
+		{
+			number = 18,
+			name = "question18",
+			question = "I felt imaginative.",
+			speaker = "",
+			response = -1,
+			responses = {
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
+			},
+			done = false
+		},
+		{
+			number = 19,
+			name = "question19",
+			question = "I felt that I could explore things.",
+			speaker = "",
+			response = -1,
+			responses = {
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
+			},
+			done = false
+		},
+		{
+			number = 20,
+			name = "question20",
+			question = "I enjoyed it.",
+			speaker = "",
+			response = -1,
+			responses = {
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
+			},
+			done = false
+		},
+		{
+			number = 21,
+			name = "question21",
+			question = "I was fast at reaching the game's targets.",
+			speaker = "",
+			response = -1,
+			responses = {
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
+			},
+			done = false
+		},
+		{
+			number = 22,
+			name = "question22",
+			question = "I felt annoyed.",
+			speaker = "",
+			response = -1,
+			responses = {
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
+			},
+			done = false
+		},
+		{
+			number = 23,
+			name = "question23",
+			question = "I felt pressured.",
+			speaker = "",
+			response = -1,
+			responses = {
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
+			},
+			done = false
+		},
+		{
+			number = 24,
+			name = "question24",
+			question = "I felt irritable.",
+			speaker = "",
+			response = -1,
+			responses = {
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
+			},
+			done = false
+		},
+		{
+			number = 25,
+			name = "question25",
+			question = "I lost track of time.",
+			speaker = "",
+			response = -1,
+			responses = {
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
+			},
+			done = false
+		},
+		{
+			number = 26,
+			name = "question26",
+			question = "I felt challenged.",
+			speaker = "",
+			response = -1,
+			responses = {
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
+			},
+			done = false
+		},
+		{
+			number = 27,
+			name = "question27",
+			question = "I found it impressive.",
+			speaker = "",
+			response = -1,
+			responses = {
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
+			},
+			done = false
+		},
+		{
+			number = 28,
+			name = "question28",
+			question = "I was deeply concentrated in the game.",
+			speaker = "",
+			response = -1,
+			responses = {
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
+			},
+			done = false
+		},
+		{
+			number = 29,
+			name = "question29",
+			question = "I felt frustated.",
+			speaker = "",
+			response = -1,
+			responses = {
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
+			},
+			done = false
+		},
+		{
+			number = 30,
+			name = "question30",
+			question = "It felt like a rich experience.",
+			speaker = "",
+			response = -1,
+			responses = {
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
+			},
+			done = false
+		},
+		{
+			number = 31,
+			name = "question31",
+			question = "I lost connection with the outside world.",
+			speaker = "",
+			response = -1,
+			responses = {
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
+			},
+			done = false
+		},
+		{
+			number = 32,
+			name = "question32",
+			question = "I felt time pressure.",
+			speaker = "",
+			response = -1,
+			responses = {
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
+			},
+			done = false
+		},
+		{
+			number = 33,
+			name = "question33",
+			question = "I had to put a lot of effort into it.",
+			speaker = "",
+			response = -1,
+			responses = {
+				{ text = "Clearly A"},
+				{ text = "Slightly A"},
+				{ text = "No difference"},
+				{ text = "Slightly B"},
+				{ text = "Clearly B"},
 			},
 			done = false
 		},
@@ -239,8 +539,8 @@ function _showIntroPage()
 		onFinish = self.go.id..".script._introCallback",
 		responses = {
 			{ text = "Okay!" },
-			{ text = "Definitely the Red Dungeon." },
-			{ text = "Definitely the Blue Dungeon." }
+			{ text = "Definitely the dungeon A." },
+			{ text = "Definitely the dungeon B." }
 		}
 	}
 
@@ -264,7 +564,7 @@ function _showSecondPage()
 
 	local page = {
 		speakerName = "Red Wizard",
-		speakerMessage = nextResponse .. "My brother will ask you several question that you need to rate from 1 to 5 according to the following scale: 1 - not at all, 2 - slightly, 3 - moderately, 4 - fairly, 5 - extremely",
+		speakerMessage = nextResponse .. "My brother will show you several sentences that you need to rate according the dungeon that represents better the topic.",
 		onFinish = self.go.id..".script._secondCallback",
 		responses = {
 			{ text = "Let's start then."},
@@ -359,7 +659,7 @@ function _callback(response)
 	if(lastQuestion ~= nil) then
 		lastQuestion.response = response;
 		lastQuestion.done = true
-		result = result .. lastQuestion.number .. ". " .. lastQuestion.question .. "\n" .. lastQuestion.response .."\n\n"
+		result = result .. lastQuestion.number .. ". " .. lastQuestion.question .. ": " .. lastQuestion.response .."\n"
 	end
 	_showQuestionaire()
 end

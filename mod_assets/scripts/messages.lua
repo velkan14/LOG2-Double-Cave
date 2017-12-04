@@ -11,7 +11,7 @@ function message3()
 end
 
 function message4()
-	GTKGui.Basic.showInfoMessage("Press '1' to open your inventory.", 5);
+	GTKGui.Basic.showInfoMessage("Press '1' to open your inventory. Or you can click in your adventurers icon for the same purpose.", 5);
 end
 
 function message5()
@@ -27,15 +27,15 @@ function message7()
 end
 
 function message8()
-	GTKGui.Basic.showInfoMessage("To attack use the RIGHT CLICK on the weapon. \n Don't forget to wield the weapon first.", 5);
+	GTKGui.Basic.showInfoMessage("To attack use the RIGHT CLICK on the weapon. \n You can use your hands, a torch or a weapon.", 5);
 end
 
 function message9()
-	GTKGui.Basic.showInfoMessage("If you are hurt you can pick up a potion to your inventory. \n When you want to use it, RIGHT CLICK it and it will heal you up.", 8);
+	GTKGui.Basic.showInfoMessage("If you are hurt, you can heal up sleeping, by pressing 'R'. Just press 'R' again to wake up.", 8);
 end
 
 function message10()
-	GTKGui.Basic.showInfoMessage("To heal up, you can rest by pressing 'R'. \nJust make sure to eat afterwards, so you don't starve.", 5);
+	GTKGui.Basic.showInfoMessage("After sleeping you will get hungrier. It is a good idea to eat afterwards, so you don't starve. \nLook, a delicious mushroom!", 5);
 end
 
 function message11()
