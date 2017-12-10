@@ -8,6 +8,7 @@
 isDone = false;
 nextResponse = "";
 nextSpeaker = "";
+firstDungeon = "";
 
 -- Public Functions (pressure plate methods)
 
@@ -27,12 +28,12 @@ end
 
 function _showIntroPage()
 
-	_faceWizard("wizard_1")
-	findEntity("wizard_1").monster:turnLeft();
+_faceWizard("wizard_1")
+	_WizardFaceYou()
 
 	local page = {
-		speakerName = "Blue Wizard",
-		speakerMessage = "Hello Adventurer! I see you find our great castle.",
+		speakerName = "King",
+		speakerMessage = "Hello Adventurer! I see you find my great castle.",
 		onFinish = self.go.id..".script._introCallback",
 		responses = {
 			{ text = "Hello!" },
@@ -55,7 +56,7 @@ function _introCallback(response)
 	end
 
 	if ( response == 3 ) then
-		nextResponse = "There's no reason to be scared!"
+		nextResponse = "There's no reason to be scared! "
 	end
 	_showSecondPage()
 end
@@ -63,12 +64,9 @@ end
 
 function _showSecondPage()
 
-	_faceWizard("red_wizard_1")
-	findEntity("red_wizard_1").monster:turnRight();
-
 	local page = {
-		speakerName = "Red Wizard",
-		speakerMessage = nextResponse .. "We are the shifty brothers, sons of the old and mighty king Valentine. You might have heard of us?",
+		speakerName = "King Valentine",
+		speakerMessage = nextResponse .. "I am the mighty king Valentine. Surely you've heard of me?",
 		onFinish = self.go.id..".script._secondCallback",
 		responses = {
 			{ text = "Never heard about you."},
@@ -97,12 +95,9 @@ function _secondCallback(response)
 end
 
 function _showThirdPage()
-
-	_faceWizard("red_wizard_1")
-
 	local page = {
-		speakerName = "Red Wizard",
-		speakerMessage = nextResponse .. "The king Valentine is the greatest king ever and rules the kingdom with fear and despair. ",
+		speakerName = "King Valentine",
+		speakerMessage = nextResponse .. "I am the greatest king ever and I rule this kingdom with fear and despair. ",
 		onFinish = self.go.id..".script._thirdCallback",
 		responses = {
 			{ text = "That doesn't seem good…"},
@@ -121,7 +116,7 @@ function _thirdCallback(response)
 	end
 
 	if ( response == 2 ) then
-		nextResponse = "We're not hiring yet. "
+		nextResponse = "I'm not hiring now. "
 	end
 
 	if ( response == 3 ) then
@@ -131,16 +126,14 @@ function _thirdCallback(response)
 end
 
 function _showFourthPage()
-
-	_faceWizard("wizard_1")
-
 	local page = {
-		speakerName = "Blue Wizard",
-		speakerMessage = nextResponse .. "Either way, I'm sure that soon one of us will be crowned after him!",
+		speakerName = "King Valentine",
+		speakerMessage = nextResponse .. "Either way, I have two sons and soon I'll crown one of them!",
 		onFinish = self.go.id..".script._fourthCallback",
 		responses = {
-			{ text = "Are you goin' to kill him?!" },
-			{ text = "Good for you." }
+			{ text = "That is nice." },
+			{ text = "Which one will you pick?" },
+			{ text = "Good for them." }
 		}
 	}
 
@@ -150,25 +143,27 @@ end
 function _fourthCallback(response)
 
 	if ( response == 1 ) then
-		nextResponse = "Don't be silly! He's old! "
+		nextResponse = "I am nice! "
 	end
 
 	if ( response == 2 ) then
-		nextResponse = "Yes! "
+		nextResponse = "I haven't decided yet. "
+	end
+	if ( response == 3 ) then
+		nextResponse = ""
 	end
 	_showFifthPage()
 end
 
 function _showFifthPage()
 
-	_faceWizard("wizard_1")
-
 	local page = {
-		speakerName = "Blue Wizard",
-		speakerMessage = nextResponse .. "He will crown one of us when we are ready. And I have a feeling it's soon. He asked us to fulfil the ultimate task!",
+		speakerName = "King Valentine",
+		speakerMessage = nextResponse .. "I will crown one of them when I find out who is ready. So I asked them to fulfil the ultimate task!",
 		onFinish = self.go.id..".script._fifthCallback",
 		responses = {
 			{ text = "It must be hard!"  },
+				{ text = "How is the task?"  },
 			{ text = "I don't care." }
 		}
 	}
@@ -190,11 +185,9 @@ end
 
 function _showSixPage()
 
-	_faceWizard("red_wizard_1")
-
 	local page = {
-		speakerName = "Red Wizard",
-		speakerMessage = nextResponse .. "We need to protect the main dungeon that leads to our king's treasure, but we are in a hustle, because we don't agree on some stuff. Maybe you can help us, brave warrior.",
+		speakerName = "King Valentine",
+		speakerMessage = nextResponse .. "They need to protect the main dungeon that leads to my treasure. Maybe you can help me decide which has the better protection.",
 		onFinish = self.go.id..".script._sixCallback",
 		responses = {
 			{ text = "Of course!" },
@@ -223,15 +216,13 @@ end
 
 function _showSevenPage()
 
-	_faceWizard("red_wizard_1")
-
 	local page = {
-		speakerName = "Red Wizard",
-		speakerMessage = nextResponse .. "All you need to do is test our dungeons and tell us which is better! We will start with one but we won't tell you if it's mine our my brother's dungeon.",
+		speakerName = "King Valentine",
+		speakerMessage = nextResponse .. "All you need to do is test their dungeons and then I'll make you some questions!",
 		onFinish = self.go.id..".script._sevenPageCallback",
 		responses = {
-			{ text = "Okay, we can start!", nextResponse = "" },
-			{ text = "Why not?.", nextResponse = "" }
+			{ text = "Okay, we can start!" },
+			{ text = "Why not?." }
 		}
 	}
 
@@ -239,30 +230,28 @@ function _showSevenPage()
 end
 
 function _sevenPageCallback(response)
+	local s = party.party:getChampionByOrdinal(1):getName()
+	local d = s:sub(0,1)
 
-
-	_faceWizard("wizard_1")
-	nextSpeaker = "Wizard"
-
-	if ( response == 1 ) then
-		nextResponse ="I've created a teleporter that will take you to the dungeon B. But first I'll have to take your weapons away. Have fun!";
+	if ( d == "A" ) then
+		firstDungeon = "A"
+		local teleprt = spawn("teleporter", 1, 14, 14, 0, 0, "teleporter_red")
+		teleprt.teleporter:setTeleportTarget(3, 20, 11, 0)
+		teleprt.teleporter:setSpin("south")
+	else
+		firstDungeon = "B"
+		local teleprt = spawn("teleporter", 1, 14, 14, 0, 0, "teleporter_blue")
+		teleprt.teleporter:setTeleportTarget(2, 20, 11, 0)
+		teleprt.teleporter:setSpin("south")
 	end
-	if ( response == 2 ) then
-		nextResponse ="We have our reasons. I've created a teleporter that will take you to the dungeon B. But first I'll have to take your weapons away. Have fun!";
-	end
-	--local teleprt = spawn("teleporter", 1, 14, 14, 0, 0, "teleporter_red")
-	--teleprt.teleporter:setTeleportTarget(3, 20, 11, 0)
-	--teleprt.teleporter:setSpin("south")
-	local teleprt = spawn("teleporter", 1, 14, 14, 0, 0, "teleporter_blue")
-	teleprt.teleporter:setTeleportTarget(2, 20, 11, 0)
-	teleprt.teleporter:setSpin("south")
+
 	_showEightPage()
 end
 
 function _showEightPage()
 	local page = {
-		speakerName = nextSpeaker,
-		speakerMessage = nextResponse,
+		speakerName = "King Valentine",
+		speakerMessage = "I've created a teleporter that will take you to the first dungeon. But first I'll have to take your weapons away. Have fun!",
 		onFinish = self.go.id..".script._eightPageCallback",
 		responses = {
 			{ text = "Okay." }
@@ -280,11 +269,25 @@ function _eightPageCallback(response)
 	end
 	party.party:heal()
 	isDone = true;
-	findEntity("wizard_1").monster:turnRight();
-	findEntity("red_wizard_1").monster:turnLeft();
+	_WizardFaceReturn()
+
 end
 
 function _faceWizard(name)
 	local red = findEntity(name)
 	party:setPosition(party.x, party.y, getDirection(red.x - party.x, red.y - party.y), party.elevation, party.level)
+end
+
+function _WizardFaceYou()
+	local x, y, t, p = party:getPosition()
+	if(x == 16 and y == 14) then
+		findEntity("wizard_1").monster:turnLeft();
+	end
+end
+
+function _WizardFaceReturn()
+	local x, y, t, p = party:getPosition()
+	if(x == 16 and y == 14) then
+		findEntity("wizard_1").monster:turnRight();
+	end
 end

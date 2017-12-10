@@ -39,7 +39,7 @@ defineObject{
 			health = 40,
 			evasion = -10,
 			exp = 0,
-			lootDrop = { 75, "turtle_steak", 75, "turtle_steak" },
+			lootDrop = { },
 			resistances = { ["poison"] = "weak" },
 			traits = { "animal" },
 			headRotation = vec(90, 0, 0),
@@ -64,7 +64,7 @@ defineObject{
 		{
 			class = "MonsterAttack",
 			name = "basicAttack",
-			attackPower = 8,
+			attackPower = 500,
 			cooldown = 5,
 			-- sound = "turtle_attack",
 			onBeginAction = function(self)

@@ -9,10 +9,13 @@
 isDone = false;
 nextResponse = "";
 nextSpeaker = "";
-
 -- Public Functions (pressure plate methods)
+wasDead = false;
+function setDeadTrue()
+	wasDead = true
+end
 
-function showDemoDialogue(sender)
+function showDemoDialogue(dead)
 	if(isDone) then
 		return;
 	end
@@ -27,13 +30,26 @@ end
 -- Internal Methods
 
 function _showIntroPage()
+_faceWizard("wizard_1")
+	_WizardFaceYou()
 
-	_faceWizard("red_wizard_1")
-	findEntity("red_wizard_1").monster:turnRight();
+local page =  {}
 
-	local page = {
-		speakerName = "Red Wizard",
-		speakerMessage = "Hi! I see you finished the dungeon B. Amazing!",
+if(wasDead) then
+	page = {
+	 speakerName = "King Valentine",
+	 speakerMessage = "You almost died! I had to pull you out of the dungeon. Next time be more careful!",
+	 onFinish = self.go.id..".script._introCallback",
+	 responses = {
+		 { text = "Thanks!" },
+		 { text = "It was hard." },
+		 { text = "I will." }
+	 }
+ }
+else
+	 page = {
+		speakerName = "King Valentine",
+		speakerMessage = "Hi! I see you finished the first dungeon. Amazing!",
 		onFinish = self.go.id..".script._introCallback",
 		responses = {
 			{ text = "It was easy!" },
@@ -41,12 +57,25 @@ function _showIntroPage()
 			{ text = "I... almost... DIED!!!" }
 		}
 	}
-
+end
 	GTKGui.Dialogue.showDialoguePage(page);
 end
 
 function _introCallback(response)
 
+if(wasDead) then
+	if ( response == 1 ) then
+		nextResponse = "No problem! "
+	end
+
+	if ( response == 2 ) then
+		nextResponse = "You still have one more challenge! "
+	end
+
+	if ( response == 3 ) then
+		nextResponse = ""
+	end
+else
 	if ( response == 1 ) then
 		nextResponse = "Haha! "
 	end
@@ -56,20 +85,18 @@ function _introCallback(response)
 	end
 
 	if ( response == 3 ) then
-		nextResponse = "That's the job of an warrior, right!?"
+		nextResponse = "That's the job of an warrior, right!? "
 	end
+end
+
 	_showSecondPage()
 end
 
 
 function _showSecondPage()
-
-	_faceWizard("wizard_1")
-	findEntity("wizard_1").monster:turnLeft();
-
 	local page = {
-		speakerName = "Wizard",
-		speakerMessage = nextResponse .. "Now it's time to try my Dungeon A. Are you ready?",
+		speakerName = "King Valentine",
+		speakerMessage = nextResponse .. "Now it's time to try the second dungeon. Are you ready?",
 		onFinish = self.go.id..".script._secondCallback",
 		responses = {
 			{ text = "Always ready for adventure."},
@@ -98,11 +125,8 @@ function _secondCallback(response)
 end
 
 function _showThirdPage()
-
-	_faceWizard("red_wizard_1")
-
 	local page = {
-		speakerName = "Red Wizard",
+		speakerName = "King Valentine",
 		speakerMessage = nextResponse .. "Let me just take away all your stuff, and you can enter the portal.",
 		onFinish = self.go.id..".script._thirdCallback",
 		responses = {
@@ -126,12 +150,25 @@ function _thirdCallback(response)
 	teleprt.teleporter:setTeleportTarget(3, 20, 11, 0)
 	teleprt.teleporter:setSpin("south")
 
-	findEntity("wizard_1").monster:turnRight();
-	findEntity("red_wizard_1").monster:turnLeft();
+	_WizardFaceReturn()
 end
 
 
 function _faceWizard(name)
 	local red = findEntity(name)
 	party:setPosition(party.x, party.y, getDirection(red.x - party.x, red.y - party.y), party.elevation, party.level)
+end
+
+function _WizardFaceYou()
+	local x, y, t, p = party:getPosition()
+	if(x == 16 and y == 14) then
+		findEntity("wizard_1").monster:turnLeft();
+	end
+end
+
+function _WizardFaceReturn()
+	local x, y, t, p = party:getPosition()
+	if(x == 16 and y == 14) then
+		findEntity("wizard_1").monster:turnRight();
+	end
 end

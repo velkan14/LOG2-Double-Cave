@@ -68,7 +68,7 @@ for i=0,3 do
 			{
 				class = "MonsterAttack",
 				name = "basicAttack",
-				attackPower = 11,
+				attackPower = 8,
 				cooldown = 4,
 				-- sound = "mummy_attack",
 				animationSpeed = 0.8,

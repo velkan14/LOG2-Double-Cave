@@ -20,11 +20,11 @@ questionaireForm = {
 			speaker = "",
 			response = -1,
 			responses = {
-				{ text = "Clearly A"},
-				{ text = "Slightly A"},
-				{ text = "No difference"},
-				{ text = "Slightly B"},
-				{ text = "Clearly B"},
+				{ text = "Clearly on the first dungeon."},
+				{ text = "Slightly on the first dungeon."},
+				{ text = "No difference between the two."},
+				{ text = "Slightly on the last dungeon."},
+				{ text = "Clearly on the last dungeon"},
 			},
 			done = false
 		},
@@ -514,6 +514,11 @@ questionaireForm = {
 
 -- Public Functions (pressure plate methods)
 
+wasDead = false;
+function setDeadTrue()
+	wasDead = true
+end
+
 function showDemoDialogue(sender)
 	if(isDone) then
 		return;
@@ -529,20 +534,35 @@ end
 -- Internal Methods
 
 function _showIntroPage()
+_faceWizard("wizard_1")
+	_WizardFaceYou()
 
-	_faceWizard("red_wizard_1")
-	findEntity("red_wizard_1").monster:turnRight();
-
-	local page = {
-		speakerName = "Red Wizard",
+local page = {}
+if(wasDead) then
+	page = {
+		speakerName = "King Valentine",
+		speakerMessage = "You almost died! I had to pull you out of the dungeon. Now it's time to compare the two.",
+		onFinish = self.go.id..".script._introCallback",
+		responses = {
+			{ text = "Okay!" },
+			{ text = "Definitely the first dungeon." },
+			{ text = "Definitely the second dungeon." }
+		}
+	}
+else
+	page = {
+		speakerName = "King Valentine",
 		speakerMessage = "You've made it through the two dungeons. Amazing! Now it's time to compare the two.",
 		onFinish = self.go.id..".script._introCallback",
 		responses = {
 			{ text = "Okay!" },
-			{ text = "Definitely the dungeon A." },
-			{ text = "Definitely the dungeon B." }
+			{ text = "Definitely the first dungeon." },
+			{ text = "Definitely the second dungeon." }
 		}
 	}
+end
+
+
 
 	GTKGui.Dialogue.showDialoguePage(page);
 end
@@ -563,8 +583,8 @@ end
 function _showSecondPage()
 
 	local page = {
-		speakerName = "Red Wizard",
-		speakerMessage = nextResponse .. "My brother will show you several sentences that you need to rate according the dungeon that represents better the topic.",
+		speakerName = "King Valentine",
+		speakerMessage = nextResponse .. "I will show you several sentences that you need to rate according to the dungeon that represents better the topic.",
 		onFinish = self.go.id..".script._secondCallback",
 		responses = {
 			{ text = "Let's start then."},
@@ -576,16 +596,21 @@ function _showSecondPage()
 end
 
 function _secondCallback(response)
-	_faceWizard("wizard_1")
-	findEntity("wizard_1").monster:turnLeft();
+	local s = party.party:getChampionByOrdinal(1):getName()
+	local d = s:sub(0,1)
+	if( d == "A") then
+		result = "First Dungeon = A\n"
+	else
+		result = "First Dungeon = B\n"
+	end
 	_showQuestionaire()
 end
 
 function _showThirdPage()
 
 	local page = {
-		speakerName = "Blue Wizard",
-		speakerMessage = nextResponse .. "Thank you! That's all the questions I had. Now we need to evaluate and decide the better dungeon. You have been really helpful.",
+		speakerName = "King Valentine",
+		speakerMessage = "Thank you! That's all the questions I had. Now I need to evaluate and decide the better dungeon thanks to your answers. You have been really helpful.",
 		onFinish = self.go.id..".script._thirdCallback",
 		responses = {
 			{ text = "No problem."},
@@ -598,9 +623,37 @@ function _showThirdPage()
 end
 
 function _thirdCallback(response)
-	_faceWizard("wizard_1")
-	findEntity("wizard_1").monster:turnLeft();
-	_showQuestionaire()
+	if ( response == 1 or response == 2) then
+		nextResponse = ""
+	end
+
+	if ( response == 3) then
+		nextResponse = "Almost... "
+	end
+	_showFourthPage()
+end
+
+function _showFourthPage()
+
+	local page = {
+		speakerName = "King Valentine",
+		speakerMessage = nextResponse .. "Go heal you up in the crystal and then come talk to me.",
+		onFinish = self.go.id..".script._fourthCallback",
+		responses = {
+			{ text = "Okay."},
+		}
+	}
+
+	GTKGui.Dialogue.showDialoguePage(page);
+end
+
+function _fourthCallback(response)
+	isDone = true
+	_WizardFaceReturn()
+	findEntity("script_dialogue").script:setQuestionsTrue()
+	findEntity("healing_crystal_2").clickable:addConnector("onClick", "script_dialogue", "setSavedTrue")
+	findEntity("floor_trigger_18").floortrigger:removeConnector("onActivate", "castle_door_portcullis_2", "close")
+	findEntity("castle_door_portcullis_2").door:open()
 end
 
 function _showQuestionaire()
@@ -628,10 +681,7 @@ function _showQuestionaire()
 		scroll.scrollitem:setScrollText(result)
 		champion:insertItem(slot, scroll.item)
 		hudPrint("You got a scroll with your answers.")
-		isDone = true
-
-		findEntity("red_wizard_1").monster:turnLeft();
-		findEntity("wizard_1").monster:turnRight();
+		_showThirdPage()
 	end
 end
 
@@ -640,7 +690,13 @@ function _showPage(question)
 		speakerName = "Blue Wizard",
 		speakerMessage = question.question,
 		onFinish = self.go.id..".script._callback",
-		responses = question.responses
+		responses = {
+			{ text = "Clearly on the first dungeon."},
+			{ text = "Slightly on the first dungeon."},
+			{ text = "No difference between the two."},
+			{ text = "Slightly on the last dungeon."},
+			{ text = "Clearly on the last dungeon."},
+		}
 	}
 	GTKGui.Dialogue.showDialoguePage(page);
 	--local page = {
@@ -667,4 +723,18 @@ end
 function _faceWizard(name)
 	local red = findEntity(name)
 	party:setPosition(party.x, party.y, getDirection(red.x - party.x, red.y - party.y), party.elevation, party.level)
+end
+
+function _WizardFaceYou()
+	local x, y, t, p = party:getPosition()
+	if(x == 16 and y == 14) then
+		findEntity("wizard_1").monster:turnLeft();
+	end
+end
+
+function _WizardFaceReturn()
+	local x, y, t, p = party:getPosition()
+	if(x == 16 and y == 14) then
+		findEntity("wizard_1").monster:turnRight();
+	end
 end

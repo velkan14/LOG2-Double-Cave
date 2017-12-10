@@ -30,8 +30,8 @@ loadLayer("tiles", {
 	5,5,5,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,3,5,5,5,4,4,4,5,5,5,
 	5,5,3,3,3,5,5,5,5,5,5,5,2,2,2,2,2,2,2,2,2,2,3,3,3,5,5,5,5,5,5,5,
 	5,5,3,3,3,5,5,5,5,5,5,5,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,5,5,5,5,
-	5,5,3,3,3,5,5,5,5,5,5,5,2,2,2,2,2,1,1,2,2,2,2,2,5,5,5,3,5,5,5,5,
-	5,5,3,3,3,5,5,5,5,5,5,5,2,2,2,2,1,1,1,2,1,1,1,2,5,5,3,3,3,5,5,5,
+	5,5,3,3,3,5,5,5,5,5,5,5,2,2,2,2,2,2,2,2,2,2,2,2,5,5,5,3,5,5,5,5,
+	5,5,3,3,3,5,5,5,5,5,5,5,2,2,2,2,2,2,2,2,1,1,1,2,5,5,3,3,3,5,5,5,
 	5,5,5,5,5,5,5,5,5,5,5,5,2,2,1,1,1,1,1,1,1,1,1,1,4,4,4,3,3,5,5,5,
 	5,5,5,5,5,5,5,5,5,5,5,5,2,2,2,2,1,1,1,2,1,1,1,2,5,5,3,4,4,5,5,5,
 	5,5,5,5,5,5,5,5,5,5,5,5,2,2,2,2,2,1,1,2,2,2,2,2,5,5,5,5,5,5,5,5,
@@ -56,7 +56,6 @@ spawn("torch_holder",4,11,1,0,"torch_holder_5")
 torch_holder_5.controller:setHasTorch(true)
 spawn("torch_holder",4,3,0,0,"torch_holder_7")
 torch_holder_7.controller:setHasTorch(true)
-spawn("starting_location",18,14,3,0,"starting_location")
 spawn("torch_holder",5,8,1,0,"torch_holder_6")
 torch_holder_6.controller:setHasTorch(true)
 spawn("torch_holder",5,6,0,0,"torch_holder_8")
@@ -120,11 +119,8 @@ floor_trigger_1.floortrigger:addConnector("onActivate", "castle_door_portcullis_
 floor_trigger_1.floortrigger:addConnector("onActivate", "script_messages", "message11")
 floor_trigger_1.floortrigger:addConnector("onActivate", "script_entity_3", "hook")
 spawn("castle_pillar_light",18,16,0,0,"castle_pillar_light_1")
-spawn("castle_pillar_light",18,13,3,0,"castle_pillar_light_2")
 spawn("wizard",16,15,1,0,"wizard_1")
 wizard_1.brain:disable()
-spawn("red_wizard",16,13,1,0,"red_wizard_1")
-red_wizard_1.brain:disable()
 spawn("castle_ceiling_light",17,14,2,0,"castle_ceiling_light_6")
 spawn("castle_ceiling_light",21,14,2,0,"castle_ceiling_light_8")
 spawn("script_entity",0,2,0,0,"script_messages")
@@ -260,7 +256,7 @@ floor_trigger_9.floortrigger:addConnector("onActivate", "dungeon_door_wooden_2",
 floor_trigger_9.floortrigger:addConnector("onActivate", "script_messages", "message8")
 spawn("dungeon_door_wooden",27,6,2,0,"dungeon_door_wooden_2")
 dungeon_door_wooden_2.door:setDoorState("open")
-spawn("floor_trigger",16,14,3,0,"floor_trigger_11")
+spawn("floor_trigger",17,15,3,0,"floor_trigger_11")
 floor_trigger_11.floortrigger:setTriggeredByParty(true)
 floor_trigger_11.floortrigger:setTriggeredByMonster(false)
 floor_trigger_11.floortrigger:setTriggeredByItem(false)
@@ -287,7 +283,9 @@ floor_trigger_12.floortrigger:setTriggeredByItem(false)
 floor_trigger_12.floortrigger:setTriggeredByDigging(false)
 floor_trigger_12.floortrigger:setDisableSelf(true)
 floor_trigger_12.floortrigger:addConnector("onActivate", "script_dialogue", "setBlueTrue")
-spawn("script_entity",15,15,3,0,"script_dialogue")
+floor_trigger_12.floortrigger:addConnector("onActivate", "castle_door_portcullis_3", "close")
+floor_trigger_12.floortrigger:addConnector("onActivate", "script_entity_10", "unHook")
+spawn("script_entity",15,13,3,0,"script_dialogue")
 script_dialogue.script:loadFile("mod_assets/scripts/dialogues/dialogue_wizards.lua")
 spawn("castle_ceiling_lantern",4,20,1,0,"castle_ceiling_lantern_1")
 spawn("script_entity",0,1,2,0,"script_entity_6")
@@ -336,8 +334,6 @@ floor_trigger_17.floortrigger:setTriggeredByItem(false)
 floor_trigger_17.floortrigger:setTriggeredByDigging(false)
 floor_trigger_17.floortrigger:setDisableSelf(true)
 floor_trigger_17.floortrigger:addConnector("onActivate", "script_messages", "message12")
-spawn("script_entity",13,14,2,0,"script_hook")
-script_hook.script:loadFile("mod_assets/scripts/hook.lua")
 spawn("turtle",17,20,3,0,"turtle_11")
 spawn("torch_holder",17,20,0,0,"torch_holder_24")
 torch_holder_24.controller:setHasTorch(true)
@@ -421,6 +417,19 @@ floor_trigger_18.floortrigger:setTriggeredByDigging(false)
 floor_trigger_18.floortrigger:setDisableSelf(false)
 floor_trigger_18.floortrigger:addConnector("onActivate", "castle_door_portcullis_2", "close")
 spawn("mine_ceiling_lantern",27,8,2,0,"mine_ceiling_lantern_2")
+spawn("script_entity",17,12,1,0,"script_dialogue_05")
+script_dialogue_05.script:loadFile("mod_assets/scripts/dialogues/dialogue_05.lua")
+spawn("castle_ceiling_lantern",16,15,1,0,"castle_ceiling_lantern_3")
+spawn("floor_trigger",16,14,0,0,"floor_trigger_22")
+floor_trigger_22.floortrigger:setTriggeredByParty(true)
+floor_trigger_22.floortrigger:setTriggeredByMonster(false)
+floor_trigger_22.floortrigger:setTriggeredByItem(false)
+floor_trigger_22.floortrigger:setTriggeredByDigging(false)
+floor_trigger_22.floortrigger:setDisableSelf(false)
+floor_trigger_22.floortrigger:addConnector("onActivate", "script_dialogue", "showDemoDialogue")
+spawn("starting_location",3,12,0,0,"starting_location")
+spawn("castle_door_portcullis",5,20,1,0,"castle_door_portcullis_3")
+castle_door_portcullis_3.door:setDoorState("open")
 
 --- level 2 ---
 
@@ -538,6 +547,7 @@ floor_trigger_14.floortrigger:setTriggeredByItem(false)
 floor_trigger_14.floortrigger:setTriggeredByDigging(false)
 floor_trigger_14.floortrigger:setDisableSelf(true)
 floor_trigger_14.floortrigger:addConnector("onActivate", "script_entity_4", "deactivateTeleport")
+floor_trigger_14.floortrigger:addConnector("onActivate", "script_entity_10", "hook")
 spawn("script_entity",20,10,0,0,"script_entity_4")
 script_entity_4.script:setSource("function deactivateTeleport()\
 \9findEntity(\"teleporter_blue\"):destroy()\
@@ -568,74 +578,10 @@ spawn("leather_boots",21,13,1,0,"leather_boots_1")
 spawn("leather_pants",21,19,1,0,"leather_pants_2")
 spawn("leather_brigandine",20,22,3,0,"leather_brigandine_2")
 spawn("leather_cap",22,15,1,0,"leather_cap_3")
+spawn("script_entity",21,10,1,0,"script_entity_10")
+script_entity_10.script:loadFile("mod_assets/scripts/hookB.lua")
 
 --- level 3 ---
-
-newMap{
-	name = "A Exit",
-	width = 32,
-	height = 32,
-	levelCoord = {1,0,-1},
-	ambientTrack = "dungeon",
-	tiles = {
-		"castle_floor",
-		"dungeon_wall",
-	}
-}
-
-loadLayer("tiles", {
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-})
-
-spawn("castle_stairs_down",6,20,1,0,"castle_stairs_down_1")
-spawn("castle_ceiling_lantern",4,20,0,0,"castle_ceiling_lantern_2")
-spawn("teleporter",2,20,3,0,"teleporter_2")
-teleporter_2.teleporter:setTeleportTarget(1,21,13,0)
-teleporter_2.teleporter:setSpin("none")
-teleporter_2.teleporter:setTriggeredByParty(true)
-teleporter_2.teleporter:setTriggeredByMonster(true)
-teleporter_2.teleporter:setTriggeredByItem(true)
-teleporter_2.teleporter:setTriggeredBySpell(true)
-spawn("floor_trigger",3,20,2,0,"floor_trigger_13")
-floor_trigger_13.floortrigger:setTriggeredByParty(true)
-floor_trigger_13.floortrigger:setTriggeredByMonster(false)
-floor_trigger_13.floortrigger:setTriggeredByItem(false)
-floor_trigger_13.floortrigger:setTriggeredByDigging(false)
-floor_trigger_13.floortrigger:setDisableSelf(true)
-floor_trigger_13.floortrigger:addConnector("onActivate", "script_dialogue", "setRedTrue")
-
---- level 4 ---
 
 newMap{
 	name = "A Level",
@@ -751,6 +697,7 @@ floor_trigger_15.floortrigger:setTriggeredByItem(false)
 floor_trigger_15.floortrigger:setTriggeredByDigging(false)
 floor_trigger_15.floortrigger:setDisableSelf(true)
 floor_trigger_15.floortrigger:addConnector("onActivate", "script_entity_5", "deactivateTeleport")
+floor_trigger_15.floortrigger:addConnector("onActivate", "script_entity_11", "hook")
 spawn("script_entity",20,10,3,0,"script_entity_5")
 script_entity_5.script:setSource("function deactivateTeleport()\
 \9findEntity(\"teleporter_red\"):destroy()\
@@ -798,6 +745,78 @@ turtle_10.monster:setAIState("guard")
 spawn("potion_healing",20,22,2,0,"potion_healing_7")
 spawn("machete",19,13,2,0,"machete_3")
 spawn("battle_axe",13,17,2,0,"battle_axe_2")
+spawn("script_entity",21,10,3,0,"script_entity_11")
+script_entity_11.script:loadFile("mod_assets/scripts/hookA.lua")
+
+--- level 4 ---
+
+newMap{
+	name = "A Exit",
+	width = 32,
+	height = 32,
+	levelCoord = {1,0,-1},
+	ambientTrack = "dungeon",
+	tiles = {
+		"castle_floor",
+		"dungeon_wall",
+	}
+}
+
+loadLayer("tiles", {
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+	2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+})
+
+spawn("castle_stairs_down",6,20,1,0,"castle_stairs_down_1")
+spawn("castle_ceiling_lantern",4,20,0,0,"castle_ceiling_lantern_2")
+spawn("teleporter",2,20,3,0,"teleporter_2")
+teleporter_2.teleporter:setTeleportTarget(1,21,13,0)
+teleporter_2.teleporter:setSpin("none")
+teleporter_2.teleporter:setTriggeredByParty(true)
+teleporter_2.teleporter:setTriggeredByMonster(true)
+teleporter_2.teleporter:setTriggeredByItem(true)
+teleporter_2.teleporter:setTriggeredBySpell(true)
+spawn("floor_trigger",3,20,2,0,"floor_trigger_13")
+floor_trigger_13.floortrigger:setTriggeredByParty(true)
+floor_trigger_13.floortrigger:setTriggeredByMonster(false)
+floor_trigger_13.floortrigger:setTriggeredByItem(false)
+floor_trigger_13.floortrigger:setTriggeredByDigging(false)
+floor_trigger_13.floortrigger:setDisableSelf(true)
+floor_trigger_13.floortrigger:addConnector("onActivate", "script_dialogue", "setRedTrue")
+floor_trigger_13.floortrigger:addConnector("onActivate", "castle_door_portcullis_4", "close")
+floor_trigger_13.floortrigger:addConnector("onActivate", "script_entity_11", "unHook")
+spawn("castle_door_portcullis",5,20,1,0,"castle_door_portcullis_4")
+castle_door_portcullis_4.door:setDoorState("open")
 
 --- level 5 ---
 
@@ -900,3 +919,113 @@ dungeon_wall_text_4.walltext:setWallText("Labyrinth")
 spawn("torch_holder",10,3,0,0,"torch_holder_30")
 torch_holder_30.controller:setHasTorch(true)
 spawn("dungeon_stairs_down",14,2,1,0,"dungeon_stairs_down_2")
+
+--- level 6 ---
+
+newMap{
+	name = "End",
+	width = 32,
+	height = 32,
+	levelCoord = {2,2,0},
+	ambientTrack = "beach",
+	tiles = {
+		"beach_ground",
+		"beach_ground_grass",
+		"beach_ground_water",
+		"beach_wall",
+		"forest_ground",
+		"forest_ground2",
+		"forest_hedge",
+	}
+}
+
+loadLayer("heightmap", {
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3,3,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,-2,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,-2,-2,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,0,-2,-2,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,-1,0,-2,-2,-3,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,-1,-2,-2,-3,-3,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,-1,-2,-2,-2,-3,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,-1,-1,-2,-2,-3,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,0,0,-1,-1,-2,-2,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,-1,-1,-2,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,-1,-1,-1,-1,-2,-2,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,-1,-1,-2,-2,-2,-2,-3,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,-1,-2,-2,-3,-3,-3,-3,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,-1,-2,-2,-2,-2,-3,-3,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,-1,-1,-1,-1,-2,-2,-3,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,0,0,-1,-1,-2,-3,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,-1,-2,-2,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,0,0,0,-1,-2,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3,0,0,0,0,0,-1,-2,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,0,0,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3,0,0,0,0,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,3,3,3,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+})
+
+loadLayer("tiles", {
+	3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,
+	3,3,3,3,3,3,3,3,3,3,3,3,3,1,1,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,
+	3,3,3,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,1,3,3,3,3,3,3,3,3,3,3,3,3,3,
+	3,3,3,3,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,3,3,3,3,3,3,3,3,3,1,
+	3,3,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,6,6,1,1,3,3,3,3,3,3,4,7,7,7,
+	3,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,3,3,7,7,4,4,
+	3,3,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,1,1,3,3,7,7,4,4,1,
+	3,3,3,1,1,1,6,6,6,6,6,5,5,6,6,6,6,6,6,6,6,1,1,1,1,7,7,7,4,4,1,1,
+	3,3,3,1,1,1,6,6,5,5,5,6,6,5,5,6,6,6,6,6,6,6,1,1,7,7,4,4,4,4,1,1,
+	3,3,3,1,1,6,6,6,6,6,6,6,6,6,5,5,5,5,5,5,5,6,1,7,7,4,4,1,4,1,1,1,
+	3,3,1,1,1,6,6,6,6,6,5,5,6,6,6,6,6,6,6,6,5,1,7,7,4,1,1,1,1,1,1,1,
+	3,3,3,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,5,7,7,4,2,1,1,1,1,1,1,1,
+	3,3,1,1,1,6,6,6,6,5,6,6,6,6,6,6,6,6,6,5,6,7,4,4,2,1,1,1,1,1,1,1,
+	3,3,1,1,1,6,6,6,6,5,6,6,6,6,6,6,6,6,6,5,7,7,4,2,2,1,1,1,1,1,1,1,
+	3,3,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,5,6,7,4,4,2,1,1,1,1,1,1,1,1,
+	3,3,1,1,1,6,6,6,6,5,6,6,6,6,6,6,6,5,6,6,7,4,2,2,1,1,1,1,1,1,1,1,
+	3,3,1,1,1,6,6,6,6,5,5,6,6,5,6,5,5,6,6,6,7,4,2,1,1,1,1,1,1,1,1,1,
+	3,3,1,1,1,6,6,6,6,6,5,5,5,5,6,6,5,5,6,4,7,4,2,1,1,1,1,1,1,1,1,1,
+	3,3,1,1,1,6,6,6,6,6,6,6,6,6,6,6,5,6,6,6,7,4,4,1,1,1,1,1,1,1,1,1,
+	3,3,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,7,7,4,1,1,1,1,1,1,1,1,1,
+	3,3,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,7,4,4,1,1,1,1,1,1,1,1,
+	3,3,1,1,1,6,1,1,6,1,1,1,1,1,1,1,1,1,1,1,1,7,7,4,1,1,1,1,4,1,1,1,
+	3,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,3,3,7,7,4,4,4,1,4,4,1,1,
+	3,3,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,3,3,3,3,3,3,7,7,4,4,4,4,4,1,1,
+	3,3,3,3,1,1,1,1,1,1,1,3,1,3,3,3,3,3,3,3,3,3,3,7,7,7,7,7,4,4,4,4,
+	3,3,3,3,3,3,1,1,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,7,7,7,7,7,4,4,
+	3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,7,7,7,7,7,
+	3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,
+	3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,
+	3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,
+	3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,
+	3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,
+})
+
+spawn("forest_heightmap",1,1,2,0,"forest_heightmap_1")
+spawn("forest_day_sky",3,1,1,0,"forest_day_sky_1")
+spawn("beach_ocean",23,15,3,0,"beach_ocean_1")
+spawn("invisible_wall",31,16,0,0,"invisible_wall_1")
+spawn("invisible_wall",31,17,0,0,"invisible_wall_2")
+spawn("invisible_wall",31,18,2,0,"invisible_wall_3")
+spawn("invisible_wall",31,19,2,0,"invisible_wall_4")
+spawn("invisible_wall",31,20,1,0,"invisible_wall_5")
+spawn("invisible_wall",30,17,2,0,"invisible_wall_6")
+spawn("invisible_wall",30,18,0,0,"invisible_wall_7")
+spawn("invisible_wall",30,18,2,0,"invisible_wall_8")
+spawn("invisible_wall",30,19,1,0,"invisible_wall_9")
+spawn("invisible_wall",31,9,1,0,"invisible_wall_11")
+spawn("invisible_wall",31,10,3,0,"invisible_wall_12")
+spawn("invisible_wall",31,11,2,0,"invisible_wall_13")
+spawn("invisible_wall",30,10,2,0,"invisible_wall_14")
+spawn("invisible_wall",30,11,1,0,"invisible_wall_15")
+spawn("invisible_wall",29,17,3,0,"invisible_wall_16")
+spawn("invisible_wall",28,17,1,0,"invisible_wall_17")
+spawn("invisible_wall",31,12,0,0,"invisible_wall_10")

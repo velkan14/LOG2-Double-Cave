@@ -78,7 +78,7 @@ for i=0,2 do
 			{
 				class = "MonsterAttack",
 				name = "basicAttack",
-				attackPower = 20,
+				attackPower = 12,
 				cooldown = 4,
 				sound = "skeleton_trooper_attack",
 				onBeginAction = function(self)
@@ -96,7 +96,7 @@ for i=0,2 do
 			{
 				class = "MonsterAttack",
 				name = "turnAttack",
-				attackPower = 20,
+				attackPower = 12,
 				cooldown = 4,
 				sound = "skeleton_trooper_attack",
 				turnToAttackDirection = true,

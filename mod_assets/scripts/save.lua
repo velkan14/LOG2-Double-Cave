@@ -6,8 +6,8 @@ firstTime = true
 function b(self)
 	if(firstTime) then
 	findEntity("castle_door_portcullis_2").door:open()
-	firstTime = false
-end
+	--firstTime = false
+	end
 end
 
 function unHook()
