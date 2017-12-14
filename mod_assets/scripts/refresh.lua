@@ -23,4 +23,11 @@ function _checkChampionPosition()
 			end
 		end
 	end
+	if(party.party:getChampionByOrdinal(2) ~= party.party:getChampion(2)) then
+		for i=1,4 do
+			if(party.party:getChampionByOrdinal(2) == party.party:getChampion(i)) then
+				party.party:swapChampions(i, 2)
+			end
+		end
+	end
 end

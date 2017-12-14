@@ -64,7 +64,7 @@ defineObject{
 		{
 			class = "MonsterAttack",
 			name = "basicAttack",
-			attackPower = 500,
+			attackPower = 5,
 			cooldown = 5,
 			-- sound = "turtle_attack",
 			onBeginAction = function(self)

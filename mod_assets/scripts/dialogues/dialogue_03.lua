@@ -145,6 +145,9 @@ function _thirdCallback(response)
 		end
 	end
 	party.party:heal()
+	party.party:getChampionByOrdinal(1):setFood(750)
+	party.party:getChampionByOrdinal(2):setFood(750)
+
 	isDone = true;
 
 	local teleprt = spawn("teleporter", 1, 14, 14, 0, 0, "teleporter_blue")

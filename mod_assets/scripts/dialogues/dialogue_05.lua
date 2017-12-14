@@ -49,14 +49,15 @@ function _introCallback()
 	temp.teleporter:setTriggeredByItem(false)
 	temp.teleporter:setTriggeredByParty(true)
 	temp.teleporter:setTriggeredByMonster(false)
-	temp.teleporter:setTeleportTarget(6, 25, 15, 0)
-
+	temp.teleporter:setTeleportTarget(6, 22, 15, 0)
+	temp.teleporter:setSpin("east")
+	
 	local t = findEntity("temporary_pressureplate_3")
 	if (t ~= nil) then
 		 t:destroy()
 	end
 
-	local temporary_pressureplate = spawn("floor_trigger", 6, 25, 15, party.facing, 0, "temporary_pressureplate_3")
+	local temporary_pressureplate = spawn("floor_trigger", 6, 22, 15, party.facing, 0, "temporary_pressureplate_3")
   temporary_pressureplate.floortrigger:setTriggeredByParty(true)
   temporary_pressureplate.floortrigger:setTriggeredByMonster(false)
   temporary_pressureplate.floortrigger:setTriggeredByItem(false)

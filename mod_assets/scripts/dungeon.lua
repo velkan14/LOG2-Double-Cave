@@ -427,9 +427,9 @@ floor_trigger_22.floortrigger:setTriggeredByItem(false)
 floor_trigger_22.floortrigger:setTriggeredByDigging(false)
 floor_trigger_22.floortrigger:setDisableSelf(false)
 floor_trigger_22.floortrigger:addConnector("onActivate", "script_dialogue", "showDemoDialogue")
-spawn("starting_location",3,12,0,0,"starting_location")
 spawn("castle_door_portcullis",5,20,1,0,"castle_door_portcullis_3")
 castle_door_portcullis_3.door:setDoorState("open")
+spawn("starting_location",3,12,0,0,"starting_location")
 
 --- level 2 ---
 
@@ -1029,3 +1029,15 @@ spawn("invisible_wall",30,11,1,0,"invisible_wall_15")
 spawn("invisible_wall",29,17,3,0,"invisible_wall_16")
 spawn("invisible_wall",28,17,1,0,"invisible_wall_17")
 spawn("invisible_wall",31,12,0,0,"invisible_wall_10")
+spawn("script_entity",22,15,0,0,"script_entity_12")
+script_entity_12.script:setSource("function ending()\
+\9print(\"end\")\
+\9--GameMode.playVideo(\"mod_assets/cinematics/cine.ivf\")\
+\9GameMode.completeGame(\"mod_assets/cinematics/cine.ivf\")\
+end")
+spawn("timer",26,15,3,0,"timer_2")
+timer_2.timer:setTimerInterval(5)
+timer_2.timer:setDisableSelf(true)
+timer_2.timer:setTriggerOnStart(true)
+timer_2.timer:setCurrentLevelOnly(true)
+timer_2.timer:addConnector("onActivate", "script_entity_12", "ending")

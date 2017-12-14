@@ -180,6 +180,9 @@ function _fifthCallback(response)
 	if ( response == 2 ) then
 		nextResponse = ""
 	end
+	if ( response == 3 ) then
+		nextResponse = ""
+	end
 	_showSixPage()
 end
 
@@ -218,7 +221,7 @@ function _showSevenPage()
 
 	local page = {
 		speakerName = "King Valentine",
-		speakerMessage = nextResponse .. "All you need to do is test their dungeons and then I'll make you some questions!",
+		speakerMessage = nextResponse .. "All you need to do is test their dungeons and then I'll ask you some questions!",
 		onFinish = self.go.id..".script._sevenPageCallback",
 		responses = {
 			{ text = "Okay, we can start!" },
@@ -251,7 +254,7 @@ end
 function _showEightPage()
 	local page = {
 		speakerName = "King Valentine",
-		speakerMessage = "I've created a teleporter that will take you to the first dungeon. But first I'll have to take your weapons away. Have fun!",
+		speakerMessage = "I've created a teleporter that will take you to the first dungeon. But first I'll have to take all your equipment. Have fun!",
 		onFinish = self.go.id..".script._eightPageCallback",
 		responses = {
 			{ text = "Okay." }

@@ -42,7 +42,7 @@ if(wasDead) then
 	 onFinish = self.go.id..".script._introCallback",
 	 responses = {
 		 { text = "Thanks!" },
-		 { text = "It was hard." },
+		 { text = "It was so hard." },
 		 { text = "I will." }
 	 }
  }
@@ -101,7 +101,7 @@ function _showSecondPage()
 		responses = {
 			{ text = "Always ready for adventure."},
 			{ text = "I'm tired."},
-			{ text = "It's my job, right?"}
+			{ text = "Ok..."}
 		}
 	}
 
@@ -119,7 +119,7 @@ function _secondCallback(response)
 	end
 
 	if ( response == 3 ) then
-		nextResponse = "I love your humor! "
+		nextResponse = ""
 	end
 	_showThirdPage()
 end
@@ -144,6 +144,9 @@ function _thirdCallback(response)
 		end
 	end
 	party.party:heal()
+	party.party:getChampionByOrdinal(1):setFood(750)
+	party.party:getChampionByOrdinal(2):setFood(750)
+
 	isDone = true;
 
 	local teleprt = spawn("teleporter", 1, 14, 14, 0, 0, "teleporter_red")

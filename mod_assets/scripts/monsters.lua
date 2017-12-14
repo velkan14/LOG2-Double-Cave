@@ -2,6 +2,9 @@
 
 -- TODO: place your custom monster definitions here
 import "mod_assets/scripts/monsters/red_wizard.lua"
-import "mod_assets/scripts/monsters/mummy.lua"
-import "mod_assets/scripts/monsters/skeleton_knight_trooper.lua"
-import "mod_assets/scripts/monsters/turtle.lua"
+--import "mod_assets/scripts/monsters/mummy.lua"
+--import "mod_assets/scripts/monsters/skeleton_knight_trooper.lua"
+--import "mod_assets/scripts/monsters/turtle.lua"
+import "mod_assets/scripts/monsters/mummy-less.lua"
+import "mod_assets/scripts/monsters/skeleton_knight-less.lua"
+import "mod_assets/scripts/monsters/turtle-less.lua"
