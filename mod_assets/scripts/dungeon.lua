@@ -285,6 +285,7 @@ floor_trigger_12.floortrigger:setDisableSelf(true)
 floor_trigger_12.floortrigger:addConnector("onActivate", "script_dialogue", "setBlueTrue")
 floor_trigger_12.floortrigger:addConnector("onActivate", "castle_door_portcullis_3", "close")
 floor_trigger_12.floortrigger:addConnector("onActivate", "script_entity_10", "unHook")
+floor_trigger_12.floortrigger:addConnector("onActivate", "script_entity_13", "setBlueTrue")
 spawn("script_entity",15,13,3,0,"script_dialogue")
 script_dialogue.script:loadFile("mod_assets/scripts/dialogues/dialogue_wizards.lua")
 spawn("castle_ceiling_lantern",4,20,1,0,"castle_ceiling_lantern_1")
@@ -430,6 +431,8 @@ floor_trigger_22.floortrigger:addConnector("onActivate", "script_dialogue", "sho
 spawn("castle_door_portcullis",5,20,1,0,"castle_door_portcullis_3")
 castle_door_portcullis_3.door:setDoorState("open")
 spawn("starting_location",3,12,0,0,"starting_location")
+spawn("script_entity",3,18,1,0,"script_entity_13")
+script_entity_13.script:loadFile("mod_assets/scripts/completed.lua")
 
 --- level 2 ---
 
@@ -815,6 +818,7 @@ floor_trigger_13.floortrigger:setDisableSelf(true)
 floor_trigger_13.floortrigger:addConnector("onActivate", "script_dialogue", "setRedTrue")
 floor_trigger_13.floortrigger:addConnector("onActivate", "castle_door_portcullis_4", "close")
 floor_trigger_13.floortrigger:addConnector("onActivate", "script_entity_11", "unHook")
+floor_trigger_13.floortrigger:addConnector("onActivate", "script_entity_13", "setRedTrue")
 spawn("castle_door_portcullis",5,20,1,0,"castle_door_portcullis_4")
 castle_door_portcullis_4.door:setDoorState("open")
 

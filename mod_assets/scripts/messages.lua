@@ -11,7 +11,7 @@ function message3()
 end
 
 function message4()
-	GTKGui.Basic.showInfoMessage("Press '1' to open your inventory. Or you can click in your adventurers icon for the same purpose.", 5);
+	GTKGui.Basic.showInfoMessage("Press the number '1' to open your inventory. Or you can click in your adventurers icon for the same purpose.", 5);
 end
 
 function message5()
