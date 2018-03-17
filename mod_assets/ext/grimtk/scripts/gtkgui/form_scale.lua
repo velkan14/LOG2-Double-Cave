@@ -13,6 +13,8 @@ currentForm = nil;
 currentPage = nil;
 isShowing = false;
 didShowPage = false;
+lastResponseButtonA = nil;
+lastResponseButtonB = nil;
 
 formTopForm = {
 	name = formTopFormName,
@@ -51,6 +53,53 @@ formTopForm = {
 			font = GTK.Constants.Fonts.Medium,
 		}
 	}
+}
+
+formResponseForm = {
+	{
+		name = "leftLabel",
+		type = "GLabel",
+		text = "[left]",
+		textAlign = GTK.Constants.TextAlign.Right,
+		position = {0, 0},
+		size = {270, 60},
+		minSize = {270, 60},
+		maxSize = {270, 60},
+		font = GTK.Constants.Fonts.Large,
+		textColor = {255, 192, 64, 255}
+	},
+	{
+		name = "responseContainer",
+		type = "GWidget",
+		position = {270, 0},
+		size = {240, 60},
+		minSize = {240, 60},
+		maxSize = {288, 60},
+		layout = {
+			type = "GBoxLayout",
+			direction = GTK.Constants.Direction.Horizontal,
+			gravity = GTK.Constants.Gravity.North,
+			hideOverflow = true,
+			spacing = {4, 4},
+			margin = {4, 4, 4, 4}
+		},
+		children =
+		{
+
+		}
+	},
+	{
+		name = "rightLabel",
+		type = "GLabel",
+		text = "[right]",
+		textAlign = GTK.Constants.TextAlign.Left,
+		position = {510, 0},
+		size = {270, 60},
+		minSize = {270, 60},
+		maxSize = {270, 60},
+		font = GTK.Constants.Fonts.Large,
+		textColor = {255, 192, 64, 255}
+	},
 }
 
 formBottomForm = {
@@ -111,12 +160,12 @@ formBottomForm = {
 			}
 		},
 		{
-			name = "formContainer",
+			name = "formContainerA",
 			type = "GWidget",
-			position = {34, 124},
-			size = {780, 140},
-			minSize = {780, 140},
-			maxSize = {780, 1000},
+			position = {34, 0},
+			size = {780, 50},
+			minSize = {780, 50},
+			maxSize = {780, 50},
 			layout = {
 				type = "GBoxLayout",
 				direction = GTK.Constants.Direction.Horizontal,
@@ -125,56 +174,43 @@ formBottomForm = {
 				spacing = {4, 4},
 				margin = {4, 4, 4, 4}
 			},
-			children =
-			{
-				{
-					name = "leftLabel",
-					type = "GLabel",
-					text = "\n[left]",
-					textAlign = GTK.Constants.TextAlign.Right,
-					position = {0, 124},
-					size = {270, 140},
-					minSize = {270, 140},
-					maxSize = {270, 1000},
-					font = GTK.Constants.Fonts.Large,
-					textColor = {255, 192, 64, 255}
-				},
-				{
-					name = "responseContainer",
-					type = "GWidget",
-					position = {270, 124},
-					size = {240, 140},
-					minSize = {240, 140},
-					maxSize = {288, 1000},
-					layout = {
-						type = "GBoxLayout",
-						direction = GTK.Constants.Direction.Horizontal,
-						gravity = GTK.Constants.Gravity.North,
-						hideOverflow = true,
-						spacing = {4, 4},
-						margin = {4, 4, 4, 4}
-					},
-					children =
-					{
-
-					}
-				},
-				{
-					name = "rightLabel",
-					type = "GLabel",
-					text = "\n[right]",
-					textAlign = GTK.Constants.TextAlign.Left,
-					position = {510, 124},
-					size = {270, 140},
-					minSize = {270, 140},
-					maxSize = {270, 1000},
-					font = GTK.Constants.Fonts.Large,
-					textColor = {255, 192, 64, 255}
-				},
+			children = formResponseForm
+		},
+		{
+			name = "formContainerB",
+			type = "GWidget",
+			position = {34, 0},
+			size = {780, 50},
+			minSize = {780, 50},
+			maxSize = {780, 50},
+			layout = {
+				type = "GBoxLayout",
+				direction = GTK.Constants.Direction.Horizontal,
+				gravity = GTK.Constants.Gravity.NorthWest,
+				hideOverflow = true,
+				spacing = {4, 4},
+				margin = {4, 4, 4, 4}
+			},
+			children = formResponseForm
+		},
+		{
+			name = "sendresponse",
+			type = "GPushButton",
+			position = {0, 0},
+			size = {24, 24},
+			minSize = {24, 24},
+			maxSize = {64, 48},
+			bgColor = {0, 0, 0, 0},
+			borders = {0, 0, 0, 0},
+			tintHover = {255, 192, 64, 64},
+			onPressedSound = "click_up",
+			label = {
+				text = "- Ok -",
+				font = GTK.Constants.Fonts.Medium,
+				padding = {4,4,4,4},
+				textAlign = GTK.Constants.TextAlign.Center,
 			}
 		},
-
-
 	}
 }
 
@@ -183,7 +219,7 @@ responseForm = {
 	type = "GPushButton",
 	size = {24, 24},
 	minSize = {24, 24},
-	maxSize = {48, 72},
+	maxSize = {48, 48},
 	bgColor = {0, 0, 0, 0},
 	borders = {0, 0, 0, 0},
 	tintHover = {255, 192, 64, 64},
@@ -208,6 +244,39 @@ function createFormForms()
 end
 
 
+function formSelectCallback(sender, mouseState)
+	if ( currentPage == nil ) then
+		Console.warn("[GTK] Dialog response called but no current page.");
+		hideForm();
+		return;
+	end
+
+	if(sender.userdata.type == "A") then
+		if(not (lastResponseButtonA == nil)) then
+			lastResponseButtonA.data.bgColor ={0,0,0,0}
+		end
+		lastResponseButtonA = sender;
+		sender.data.bgColor = {100, 200, 100, 100}
+	end
+	if(sender.userdata.type == "B") then
+		if(not (lastResponseButtonB == nil)) then
+			lastResponseButtonB.data.bgColor ={0,0,0,0}
+		end
+		lastResponseButtonB = sender;
+		sender.data.bgColor = {100, 200, 100, 100}
+	end
+
+	local bottomWindow = GTK.Core.GUI:getWindow(formBottomFormName);
+	local sendresponse = bottomWindow:findChild("sendresponse");
+
+	if((not (lastResponseButtonB == nil)) and (not (lastResponseButtonA == nil)) and (sendresponse.data.visible == false)) then
+			sendresponse:setOpacity(1.0);
+			sendresponse:setVisible(true);
+			sendresponse.userdata.type = "Ok";
+			sendresponse:addConnectorWithStr("onPressed", "GTKGui.Form.formResponseCallback");
+	end
+end
+
 function formResponseCallback(sender, mouseState)
 	if ( currentPage == nil ) then
 		Console.warn("[GTK] Dialog response called but no current page.");
@@ -221,9 +290,12 @@ function formResponseCallback(sender, mouseState)
 	didShowPage = false;		-- Incase another "show page" is called in a callback
 
 	local onFinish = GTK.Core.Utils.funcFromString(page.onFinish);
-
+	local awnser = {
+		A = lastResponseButtonA.userdata.index,
+		B = lastResponseButtonB.userdata.index,
+	}
 	if (onFinish) then
-		onFinish(sender.userdata.index);
+		onFinish(awnser);
 	end
 
 	if ( (nextPage == nil) and currentForm and response.nextPage ) then
@@ -282,10 +354,22 @@ function showFormPage(page)
 	local speakerLabel = bottomWindow:findChild("speakerLabel");
 	local speakerMessageLabel = bottomWindow:findChild("messageLabel");
 	local speakerContainer = bottomWindow:findChild("speakerContainer");
-	local formContainer = bottomWindow:findChild("formContainer");
-	local responseContainer = formContainer:findChild("responseContainer");
-	local leftLabel = formContainer:findChild("leftLabel");
-	local rightLabel = formContainer:findChild("rightLabel");
+	-- A
+	local formContainerA = bottomWindow:findChild("formContainerA");
+	local responseContainerA = formContainerA:findChild("responseContainer");
+	local leftLabelA = formContainerA:findChild("leftLabel");
+	local rightLabelA = formContainerA:findChild("rightLabel");
+	-- B
+	local formContainerB = bottomWindow:findChild("formContainerB");
+	local responseContainerB = formContainerB:findChild("responseContainer");
+	local leftLabelB = formContainerB:findChild("leftLabel");
+	local rightLabelB = formContainerB:findChild("rightLabel");
+
+	local sendresponse = bottomWindow:findChild("sendresponse");
+
+	if( sendresponse ) then
+		sendresponse:setVisible(false)
+	end
 
 	if ( page.speakerName or page.speakerMessage ) then
 		if ( speakerLabel ) then
@@ -318,25 +402,26 @@ function showFormPage(page)
 		page.onFinish = nil;
 	end
 
-	if( leftLabel and page.leftLabel ) then
-		leftLabel.data.text = "\n" .. page.leftLabel;
-		leftLabel:setVisible(true);
-	end
+	-- if( leftLabel and page.leftLabel ) then
+	-- 	leftLabel.data.text = "\n" .. page.leftLabel;
+	-- 	leftLabel:setVisible(true);
+	-- end
+  --
+	-- if( rightLabel and page.rightLabel ) then
+	-- 	rightLabel.data.text = "\n" .. page.rightLabel;
+	-- 	rightLabel:setVisible(true);
+	-- end
 
-	if( rightLabel and page.rightLabel ) then
-		rightLabel.data.text = "\n" .. page.rightLabel;
-		rightLabel:setVisible(true);
-	end
-
-	if ( responseContainer and page.responses ) then
+	-- A --
+	if ( responseContainerA and page.responses ) then
 		local delayedStart = GTK.Widgets.GSequenceAction.create({
 			GTK.Widgets.GWaitAction.create(textTypeDuration),
 			GTK.Widgets.GFadeToAction.create(1.0, 0.1)
 		});
 
-		responseContainer:removeAllChildren();
-		responseContainer:setOpacity(1.0);
-		responseContainer:runAction(delayedStart);
+		responseContainerA:removeAllChildren();
+		responseContainerA:setOpacity(1.0);
+		responseContainerA:runAction(delayedStart);
 
 		for i=1, page.responses do
 			local responseButton = GTK.Widgets.GWidget.createGeneric(responseForm);
@@ -344,12 +429,40 @@ function showFormPage(page)
 			if ( responseButton ) then
 				responseButton.data.keyboardShortcut = tostring(i);
 				responseButton.userdata.index = i;
-				responseButton.label.data.text = "\n -" .. i .. "- ";
-				responseButton:addConnectorWithStr("onPressed", "GTKGui.Form.formResponseCallback");
-				responseContainer:addChild(responseButton);
+				responseButton.userdata.type = "A";
+				responseButton.label.data.text = " -" .. i .. "- ";
+				responseButton.bgColor = {64, 255, 64, 64};
+				responseButton:addConnectorWithStr("onPressed", "GTKGui.Form.formSelectCallback");
+				responseContainerA:addChild(responseButton);
 			end
 		end
 	end
+
+	-- B --
+	if ( responseContainerB and page.responses ) then
+		local delayedStart = GTK.Widgets.GSequenceAction.create({
+			GTK.Widgets.GWaitAction.create(textTypeDuration),
+			GTK.Widgets.GFadeToAction.create(1.0, 0.1)
+		});
+
+		responseContainerB:removeAllChildren();
+		responseContainerB:setOpacity(1.0);
+		responseContainerB:runAction(delayedStart);
+
+		for i=1, page.responses do
+			local responseButton = GTK.Widgets.GWidget.createGeneric(responseForm);
+
+			if ( responseButton ) then
+				responseButton.data.keyboardShortcut = tostring(i);
+				responseButton.userdata.index = i;
+				responseButton.userdata.type = "B";
+				responseButton.label.data.text = " -" .. i  .. "- ";
+				responseButton:addConnectorWithStr("onPressed", "GTKGui.Form.formSelectCallback");
+				responseContainerB:addChild(responseButton);
+			end
+		end
+	end
+
 
 	bottomWindow:setVisible(true);
 

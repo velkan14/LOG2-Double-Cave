@@ -433,6 +433,15 @@ castle_door_portcullis_3.door:setDoorState("open")
 spawn("starting_location",3,12,0,0,"starting_location")
 spawn("script_entity",3,18,1,0,"script_entity_13")
 script_entity_13.script:loadFile("mod_assets/scripts/completed.lua")
+spawn("dungeon_pressure_plate",3,11,3,0,"dungeon_pressure_plate_5")
+dungeon_pressure_plate_5.floortrigger:setTriggeredByParty(true)
+dungeon_pressure_plate_5.floortrigger:setTriggeredByMonster(true)
+dungeon_pressure_plate_5.floortrigger:setTriggeredByItem(true)
+dungeon_pressure_plate_5.floortrigger:setTriggeredByDigging(false)
+dungeon_pressure_plate_5.floortrigger:setDisableSelf(false)
+dungeon_pressure_plate_5.floortrigger:addConnector("onActivate", "script_entity_14", "showDemoDialogue")
+spawn("script_entity",2,11,2,0,"script_entity_14")
+script_entity_14.script:loadFile("mod_assets/scripts/dialogues/questionaire.lua")
 
 --- level 2 ---
 

@@ -690,15 +690,9 @@ function _showPage(question)
 		speakerName = "King Valentine",
 		speakerMessage = question.question,
 		onFinish = self.go.id..".script._callback",
-		responses = {
-			{ text = "Clearly on the first dungeon."},
-			{ text = "Slightly on the first dungeon."},
-			{ text = "No difference between the two."},
-			{ text = "Slightly on the last dungeon."},
-			{ text = "Clearly on the last dungeon."},
-		}
+		responses = 5,
 	}
-	GTKGui.Dialogue.showDialoguePage(page);
+	GTKGui.Form.showFormPage(page);
 	--local page = {
 	--	speakerName = speaker,
 	--	speakerMessage = question.name,
@@ -713,9 +707,8 @@ end
 
 function _callback(response)
 	if(lastQuestion ~= nil) then
-		lastQuestion.response = response;
 		lastQuestion.done = true
-		result = result .. lastQuestion.number .. ". " .. lastQuestion.question .. ": " .. lastQuestion.response .."\n"
+		result = result .. lastQuestion.number .. ". " .. lastQuestion.question .. ": A-" .. response.A .. " B-" .. response.B .."\n"
 	end
 	_showQuestionaire()
 end
